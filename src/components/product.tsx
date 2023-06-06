@@ -11,7 +11,7 @@ export type ProductPreview = {
   }
 
 type ProductProps = {
-  product: Product
+  product: ProductPreview
 }
 
 export const Product:React.FC<ProductProps> = ({ product }) => 

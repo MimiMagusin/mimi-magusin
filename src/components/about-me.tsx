@@ -58,7 +58,7 @@ const AboutMeText: React.FC<{id: string}> =({id}) => {
         Na het behalen van mijn <b>Bachelor of Arts</b> <i>(University College Roosevelt, 2013-2016, Cum Laude)</i> ben ik met veel plezier aan de slag gegaan als <b>Docent</b> en <b>Web Developer</b> verschillende bedrijven.
       </p>
       <p className="mt-6 text-md leading-8 text-gray-300">
-        In 2023 ben ik begonnen met de opleiding <b>Docent Muziek op Maat</b> <i>(Artez, Zwolle)</i> en ondertussen ben ik werkzaam als docent bij <b>Kunsteducatie Culemborg</b> en bij de <b>Godelindeschool</b> in Hilversum.
+        In 2023 ben ik begonnen met de opleiding <b>Docent Muziek op Maat</b> <i>(Artez, Zwolle)</i> en ondertussen ben ik werkzaam als docent bij <b>Kunsteducatie Culemborg</b>, <b>de Utrechtse Muziekschool</b> en bij de <b>Godelindeschool</b> in Hilversum.
       </p>
       <p className="mt-6 text-md leading-8 text-gray-300">
         Daarnaast ben ik <b>muzikaal leider</b> en <b>dirigent</b> van de zang-community <b>Ilico</b>, waarmee we korte concertjes organiseren op bijzondere locaties.

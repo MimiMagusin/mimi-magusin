@@ -38,7 +38,7 @@ export const AboutMe: React.FC<{ id: string }> = ({id}) => {
               alt="Mimi Magusin"
               fill
             /> */}
-          <img alt="Mimi Magusin" src="https://mimimagusin.files.wordpress.com/2014/03/12273682_731783956957444_2372358248743957008_o.jpg" className="w-4/6 h-full w-full m-auto object-cover" />
+          <img alt="Mimi Magusin" src="https://mimimagusin.files.wordpress.com/2014/03/12273682_731783956957444_2372358248743957008_o.jpg" className="w-4/6 h-full w-full m-auto object-cover rounded-md" />
         </div>
       </div>
     </div>

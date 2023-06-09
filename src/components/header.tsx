@@ -1,10 +1,13 @@
 'use client';
-import React, { Fragment, useState } from "react"
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import React, { useState } from "react"
+import { Dialog} from '@headlessui/react'
 import {
   Bars3Icon,
+  HomeIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
+import Link from "next/link";
+import { usePathname } from 'next/navigation'
 
 type Section = {
   title: string;
@@ -16,18 +19,27 @@ type HeaderProps = {
 }
 
 export const Header: React.FC<HeaderProps> = ({sections}) => {
- const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+ const pathname = usePathname();
   return (
-    <header className="flex items-center justify-end p-6 lg:px-8 position fixed w-full z-10" aria-label="Global">
+    <header className="flex items-center justify-end p-6 lg:px-8 position fixed w-full z-10 gap-8" aria-label="Global">
       <nav>
-         <div className="flex">
+         <div className="flex gap-4">
+           {pathname !== "/" && <Link
+              type="button"
+              className="w-16 flex justify-center rounded-md bg-indigo-600 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              href="/"
+            >
+              <span className="sr-only">Home Page</span>
+              <HomeIcon  className="h-8 w-8"/>
+            </Link>}
           <button
             type="button"
-            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="w-16 flex justify-center rounded-md bg-indigo-600 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="h-8 w-8" aria-hidden="true" />
           </button>
         </div>
       </nav>
@@ -44,12 +56,13 @@ export const Header: React.FC<HeaderProps> = ({sections}) => {
             </button>
            {sections.map(section => (
               <div  key={section.id} className="lg:flex lg:flex-1 lg:justify-end">
-                <a
-                  href={`#${section.id}`}
+                <Link
+                  href={section.id}
                   className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {section.title}
-                </a>
+                </Link>
               </div>
             ))}
         </Dialog.Panel>

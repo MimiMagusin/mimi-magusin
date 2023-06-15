@@ -3,7 +3,7 @@ import { courses } from "./courses";
 
 export default function Courses() {
   return( 
-    <div className="pb-8">
+    <div className="py-8">
        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl pt-8 text-center">
         Leer mee!
       </h1>

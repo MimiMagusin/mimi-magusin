@@ -38,6 +38,29 @@ export default function CoursePage({ params }: { params: { id: string}}) {
                 ))}
               </ul>
             </div>
+            {course.signUp && (
+              <>
+                <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+                  <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Waar en wanneer?</h2>
+                  <ul role="list" className="mt-8 pl-8 space-y-2 text-gray-600">
+                    <li className="flex gap-x-3"><b>Cursusdag:</b> {course.dayAndTime}</li>
+                    <li className="flex gap-x-3"><b>Startdatum:</b> {course.startDate}</li>
+                    <li className="flex gap-x-3"><b>Locatie:</b> {course.location}</li>
+                    <li className="flex gap-x-3"><b>Prijs:</b> {course.location}</li>
+                  </ul>
+                </div>
+                <div className="lg:col-span-8 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl">
+                  <a 
+                    type="button"
+                    className="w-32 flex justify-center rounded-md bg-indigo-600 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    href="mailto:info@mimimagusin.com"
+                  >
+                    Aanmelden 
+                  </a>
+                </div>
+              </>
+            )}
+           
           </div>
         </div>
       </div>

@@ -31,8 +31,8 @@ export const Footer: React.FC<{sections: Section[]}> = ({ sections }) => (
       <h2 className="text-xl text-gray-300 font-bold pb-2">Contact</h2>
       <p className='text-gray-300'>Mimi Magusin</p>
       <p className='text-gray-300 pb-4'><i>Muziek, onderwijs en code in Culemborg & Omgeving</i></p>
-      <p className='text-gray-300 '>email: </p>
-      <p className='text-gray-300 '>kvk: </p>
+      <p className='text-gray-300 '>email: <a href="mailto:info@mimimagusin.com">info@mimimagusin.com</a></p>
+      <p className='text-gray-300 '>kvk: 90499360</p>
 
     </div>
   </footer>

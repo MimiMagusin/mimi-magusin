@@ -44,7 +44,7 @@ export default function CoursePage({ params }: { params: { id: string}}) {
                   <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Waar en wanneer?</h2>
                   <ul role="list" className="mt-8 pl-8 space-y-2 text-gray-600">
                     <li className="flex gap-x-3"><b>Cursusdag:</b> {course.dayAndTime}</li>
-                    <li className="flex gap-x-3"><b>Startdatum:</b> {course.startDate}</li>
+                    <li className="flex gap-x-3"><b>Startdatum:</b> {course.startDate?.getDay() || ""}</li>
                     <li className="flex gap-x-3"><b>Locatie:</b> {course.location}</li>
                     <li className="flex gap-x-3"><b>Prijs:</b> {course.location}</li>
                   </ul>

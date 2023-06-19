@@ -1,3 +1,4 @@
+import { Course } from "@/app/courses/courses";
 import Image from "next/image";
 
 export type ProductPreview = {
@@ -11,30 +12,23 @@ export type ProductPreview = {
   }
 
 type ProductProps = {
-  product: ProductPreview
+  product: Course
 }
 
-export const Product:React.FC<ProductProps> = ({ product }) => 
-  (
-    <div className="group relative">
-      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 h-80">
-        <img
-          src={product.imageSrc}
-          alt={product.imageAlt}
-          className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-        />
-      </div>
-      <div className="mt-4 flex justify-between">
-        <div>
-          <h3 className="text-lg text-gray-700">
-            <a href={product.href}>
-              <span aria-hidden="true" className="absolute inset-0" />
-              {product.name}
-            </a>
-          </h3>
-          <p className="mt-1 text-md text-gray-500">{product.targetAudience}</p>
-        </div>
-        <p className="text-sm font-medium text-gray-900">{product.price}</p>
-      </div>
+export const Product:React.FC<ProductProps> = ({ product }) => (
+  <div className="relative h-96 w-full flex items-end justify-start text-left bg-cover bg-center rounded-md hover:opacity-90 overflow-hidden" style={{ backgroundImage: `url(${product.imageSrc})`}}>
+    <a href={product.href} className="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900"></a>
+    <div className="p-5 z-10">
+      <h3 className="text-md tracking-tight font-medium leading-7 text-2xl text-white" style={{color: 'rgb(var(--background-start-rgb))'}}><a href={product.href}>{product.name}</a></h3>
+      <p className="mt-1 text-md text-gray-300">{product.targetAudience}</p>
+      <ul className="flex gap-2 flex-wrap pt-2">
+        {
+          product.themes.map(theme => (
+            <li className="bg-indigo-600 text-gray-300 text-xs font-medium px-2.5 pt-0.5 pb-1 rounded-full" key={`${product.name}-${theme}`}>{theme}</li>
+          ))
+        }
+      </ul>
+    </div>
+  
   </div>
 );

@@ -1,7 +1,8 @@
 import React from "react";
 import { Product, ProductPreview } from "./product";
+import { Course } from "@/app/courses/courses";
 
-export const Products: React.FC<{products: ProductPreview[], withTitle?: boolean}> = ({ products, withTitle=false }) => (
+export const Products: React.FC<{products: Course[], withTitle?: boolean}> = ({ products, withTitle=false }) => (
   <>
     <div className="mx-auto max-w-2xl lg:max-w-7xl ">
      { withTitle && <h2 className="text-4xl font-bold tracking-tight text-gray-900">Cursussen</h2>}

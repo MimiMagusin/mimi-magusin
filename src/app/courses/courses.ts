@@ -1,12 +1,15 @@
 import { ProductPreview } from "@/components/product";
 
+type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek'
+
 export type Course = ProductPreview & {
   introduction?: string;
   learningGoals?: string[];
   location?: string;
   dayAndTime?: string;
-  startDate?: string;
-  signUp?: boolean
+  startDate?: Date;
+  signUp?: boolean;
+  themes: Theme[];
 }
 
 export const courses: Course[] = [
@@ -19,19 +22,63 @@ export const courses: Course[] = [
     href: "/courses/amv-kleuters-een-muzikale-ontdekkingstocht",
     price: "",
     learningGoals: ['Actief luisteren', 'Bewegen op de maat van de muziek', 'Uitbreiden (muzikale) woordenschat', 'Samen zingen'],
-    introduction: 'In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren we luisteren, ontwikkelen we ons ritmegevoel, trainen we onze zangstem en maken we kennis met allerlei ritme-instrumenten'
+    introduction: 'In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren we luisteren, ontwikkelen we ons ritmegevoel, trainen we onze zangstem en maken we kennis met allerlei ritme-instrumenten',
+    signUp: false,
+    themes: ['muziek', 'korte cursus', 'amv']
   },
-    {
+  {
     id:"amv-bovenbouw-talent-klas",
-    name: "Talentklas",
+    name: "All about music",
     imageSrc: "https://images.unsplash.com/photo-1572870014793-c39267e4d1ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=385&q=80",
     imageAlt: "teenager singing",
     targetAudience: "Groep 7/8",
     href: "/courses/amv-bovenbouw-talent-klas",
     price: "",
     learningGoals: ["De 'beat' in een muziekstuk identificeren", "Een lied of rap uitvoeren","Eenvoudige ritmes (kwart- en achtste noten, max vier tellen) kunnen herkennen, uitvoeren en opschrijven", "Een (ritmisch) stuk componeren"],
-    introduction: "Deze cursus gaat over het ontdekken van jouw muzikale talenten! We gaan aan de slag met (body)percussie, ritmes, zang en rap. Aan het eind van de cursus maken we een mooie show met alles wat we geleerd hebben."
+    introduction: "Deze cursus gaat over het ontdekken van jouw muzikale talenten! We gaan aan de slag met (body)percussie, ritmes, zang en rap. Aan het eind van de cursus maken we een mooie show met alles wat we geleerd hebben.",
+    signUp: false,
+    themes: ['muziek', 'korte cursus', 'amv']
   },
+  // {
+  //   id:"choir-academy-level-1",
+  //   name: "Choir Academy - Level 1",
+  //   imageSrc: "https://images.unsplash.com/photo-1559671902-3bdecacfdf7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2hpbGRyZW4lMjBzaW5naW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+  //   imageAlt: "boy singing in microphone",
+  //   targetAudience: "4 t/m 6 jaar",
+  //   href: "/courses/choir-academy-level-1",
+  //   price: "",
+  //   learningGoals: ["Hoe je je stem gezond gebruikt", "Samen zingen", "Heel veel liedjes"],
+  //   introduction: "Met de jongste leerlingen van de Choir Academy gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren hoe we onze stem goed gebruiken, naar elkaar kunnen luisteren en ontwikkelen we ons ritmegevoel.",
+  //   signUp: true,
+  //   dayAndTime: "Vrijdag, 15:00-15:45",
+  //   startDate: "25 augustus 2023 - later instromen mogelijk"
+  // },
+  {
+    id:"choir-academy-level-2",
+    name: "Choir Academy",
+    imageSrc: "https://images.unsplash.com/photo-1453738773917-9c3eff1db985?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    imageAlt: "boy singing in microphone",
+    targetAudience: "7 t/m 12 jaar",
+    href: "/courses/choir-academy-level-2",
+    price: "",
+    learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Samen zingen"],
+    introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
+    signUp: true,
+    dayAndTime: "Vrijdag, 16:00-17:00",
+    startDate: new Date('August 23, 2023'),
+    themes: ['zingen', 'koor', 'noten lezen']
+  },
+  // {
+  //   id:"choir-academy-level-3",
+  //   name: "Choir Academy - Level 3",
+  //   imageSrc: "https://images.unsplash.com/photo-1551980349-75d992b49c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80",
+  //   imageAlt: "woman singing, raising hands",
+  //   targetAudience: " 13 t/m 18",
+  //   href: "/courses/choir-academy-level-1",
+  //   price: "",
+  //   learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Samen zingen"],
+  //   introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. In deze cursussen"
+  // },
   {
     id:"vu-luisteren-naar-klassieke-muziek",
     name: "Klassieke Muziek: van luisteren naar begrijpen",
@@ -41,9 +88,11 @@ export const courses: Course[] = [
     href: "/courses/vu-luisteren-naar-klassieke-muziek",
     price: "",
     learningGoals: ["Kennismaken met verschillende soorten klassieke muziek", "De verhalen achter de muziek leren kennen", "Kenmerken en patronen leren herkennen in muziek"],
-    introduction: "Iedereen kan genieten van klassieke muziek! In deze cursus leer je hoe je (nog) meer van klassieke muziek kan genieten. Ook duiken we in de spannende, verrassende en ontroerende verhalen en componisten achter de muziekstukken."
+    introduction: "Iedereen kan genieten van klassieke muziek! In deze cursus leer je hoe je (nog) meer van klassieke muziek kan genieten. Ook duiken we in de spannende, verrassende en ontroerende verhalen en componisten achter de muziekstukken.",
+    signUp: true,
+    themes: ['muziek', 'korte cursus']
   },
-    {
+  {
     id:"vu-digitale-vaardigheden",
     name: "Digitale Vaardigheden 101",
     imageSrc: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
@@ -52,6 +101,8 @@ export const courses: Course[] = [
     href: "/courses/vu-digitale-vaardigheden",
     price: "",
     learningGoals: ["Whatssapp gebruiken om elkaar berichten te sturen", "Videobellen", "Muziek luisteren of films kijken","Veiligheid online"],
-    introduction: "Contact houden met je (klein)kinderen? Op de hoogte blijven van nieuws? Genieten van mooie muziek of grappige video's? Veilig online gaan? In deze cursus komt het allemaal aan bod. Neem je eigen laptop en smartphone mee en ga aan de slag! Heb je een specifieke vraag, of wil je iets leren wat nog niet in het programma zit? Laat het even weten!"
+    introduction: "Contact houden met je (klein)kinderen? Op de hoogte blijven van nieuws? Genieten van mooie muziek of grappige video's? Veilig online gaan? In deze cursus komt het allemaal aan bod. Neem je eigen laptop en smartphone mee en ga aan de slag! Heb je een specifieke vraag, of wil je iets leren wat nog niet in het programma zit? Laat het even weten!",
+    signUp: true,
+    themes: ['digitale vaardigheden', 'korte cursus']
   }
 ]

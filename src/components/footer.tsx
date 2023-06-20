@@ -19,7 +19,7 @@ export const Footer: React.FC<{sections: Section[]}> = ({ sections }) => (
       <h2 className="text-xl text-gray-300 font-bold">Socials</h2>
       <ul className="pt-2">
         <li>
-          <a href={`#`} className='leading-8 text-gray-300 underline underline-offset-8'>LinkedIn</a>
+          <a href='https://nl.linkedin.com/in/mimi-magusin-a58610146' className='leading-8 text-gray-300 underline underline-offset-8'>LinkedIn</a>
         </li>
         <li>
           <a href={`#`} className='leading-8 text-gray-300 underline underline-offset-8'>YouTube</a>

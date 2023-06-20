@@ -55,7 +55,7 @@ const AboutMeText: React.FC<{id: string}> =({id}) => {
         ensembles dirigeren, gaf ik workshops op het <b>primair en secundair onderwijs</b> en gaf ik in allerlei vakken bijles aan jongeren en volwassenen.
       </p>
       <p className="mt-6 text-md leading-8 text-gray-300">
-        Na het behalen van mijn <b>Bachelor of Arts</b> <i>(University College Roosevelt, 2013-2016, Cum Laude)</i> ben ik met veel plezier aan de slag gegaan als <b>Docent</b> en <b>Web Developer</b> verschillende bedrijven.
+        Na het behalen van mijn <b>Bachelor of Arts</b> <i>(University College Roosevelt, 2013-2016, Cum Laude)</i> ben ik met veel plezier aan de slag gegaan als <b>Docent</b> en <b>Web Developer</b> bij verschillende bedrijven.
       </p>
       <p className="mt-6 text-md leading-8 text-gray-300">
         In 2023 ben ik begonnen met de opleiding <b>Docent Muziek op Maat</b> <i>(Artez, Zwolle)</i> en ondertussen ben ik werkzaam als docent bij <b>Kunsteducatie Culemborg</b>, <b>de Utrechtse Muziekschool</b> en bij de <b>Godelindeschool</b> in Hilversum.

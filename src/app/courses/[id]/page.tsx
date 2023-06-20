@@ -37,7 +37,7 @@ export default function CoursePage({ params }: { params: { id: string}}) {
             { course.signUp? <SignUpComponent course={course} /> : 
                 <>
                   <p className="pt-16  text-gray-700">Helaas kan je je voor deze cursus niet (meer) aanmelden.</p>
-                  <p className="pt-16  text-gray-700"> Toch interesse? Stuur een mailtje naar <a href="mailto:info@mimimagusin.com" className="font-semibold italic">info@mimimagusin.com</a>.</p>
+                  <p className="text-gray-700"> Toch interesse? Stuur een mailtje naar <a href="mailto:info@mimimagusin.com" className="font-semibold italic">info@mimimagusin.com</a>.</p>
                 </>
             }
           </div>

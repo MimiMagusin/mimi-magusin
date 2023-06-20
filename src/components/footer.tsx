@@ -7,7 +7,7 @@ type Section = {
 }
 
 export const Footer: React.FC<{sections: Section[]}> = ({ sections }) => (
-  <footer className="bg-gray-900 py-24 p-8 flex gap-4 lg:p-24">
+  <footer className=" w-full bg-gray-900 py-24 px-8 flex gap-x-4 gap-y-16 flex-wrap">
     <div className="grow basis-9/12 justify-start lg:basis-auto">
       <h2 className="text-xl text-gray-300 font-bold">Navigatie</h2>
       <ul className="pt-2">

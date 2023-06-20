@@ -3,7 +3,7 @@ import React from "react"
 
 export const AboutMe: React.FC<{ id: string }> = ({id}) => {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 p-8 lg:p-24 min-h-screen flex items-center bg-indigo-800">
+    <div className="relative isolate overflow-hidden bg-gray-900 p-8 lg:p-24 min-h-screen flex items-center bg-indigo-800 -mx-8">
       <div
         className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-5 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
         aria-hidden="true"

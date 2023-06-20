@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Mimi Magusin',
-  description: 'Mimi Magusin, Muziek en Onderwijs. Meer informatie over mij en mijn muzieklessen in de omgeving van Utrecht.'
+  description: 'Mimi Magusin, Muziek,  Onderwijs en Code. Meer informatie over mij en mijn muzieklessen in de omgeving van Culemborg en Utrecht, voor alle leeftijden. Bekijk de cursussen algemene muzikale vorming, Choir Academy, Luisteren naar klassieke muziek of digitale vaardigheden!'
 }
 export const coursesId = "courses"
 export const aboutMeId = "about-me"

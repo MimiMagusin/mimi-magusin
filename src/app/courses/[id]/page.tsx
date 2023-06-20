@@ -67,3 +67,10 @@ export default function CoursePage({ params }: { params: { id: string}}) {
     </div>
   );
 }
+
+export async function generateStaticParams() {
+ 
+  return courses.map((course) => ({
+    id: course.id,
+  }))
+}

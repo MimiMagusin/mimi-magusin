@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="nl">
       <body className={inter.className}> 
         <Header sections={sections}/>
-        <main className="flex min-h-screen flex-col items-center justify-between pt-8 w-full">
+        <main className="flex min-h-screen flex-col items-center justify-between pt-8 px-8 w-full overflow-hidden">
           {children}
         </main>
         <Footer sections={sections}/>

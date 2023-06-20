@@ -7,7 +7,7 @@ export type Course = ProductPreview & {
   learningGoals?: string[];
   location?: string;
   dayAndTime?: string;
-  startDate?: Date;
+  startDate?: Date[];
   signUp?: boolean;
   themes: Theme[];
 }
@@ -25,7 +25,7 @@ export const courses: Course[] = [
     introduction: "Zing en speel deze zomer mee met de Summer Singing Games! Spelenderwijs leer je in vier lessen alerlei liedjes en spelletjes, train je je stem en ontwikkel je ritmegevoel. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
     signUp: true,
     dayAndTime: "dinsdag, 15:00 (vier keer)",
-    startDate: new Date('July 25, 2023'),
+    startDate: [new Date('July 25, 2023')],
     themes: ['zingen', 'games', 'korte cursus']
   },
   // {
@@ -54,7 +54,7 @@ export const courses: Course[] = [
     introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
     signUp: true,
     dayAndTime: "Vrijdag, 16:00-17:00",
-    startDate: new Date('August 23, 2023'),
+    startDate: [new Date('August 23, 2023')],
     themes: ['zingen', 'koor', 'noten lezen']
   },
   // {

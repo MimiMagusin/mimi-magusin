@@ -1,43 +1,32 @@
 import { ProductPreview } from "@/components/product";
 
-type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek'
+type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek' | 'games'
 
 export type Course = ProductPreview & {
   introduction?: string;
   learningGoals?: string[];
   location?: string;
   dayAndTime?: string;
-  startDate?: Date;
+  startDate?: Date[];
   signUp?: boolean;
   themes: Theme[];
 }
 
 export const courses: Course[] = [
   {
-    id:"amv-kleuters-een-muzikale-ontdekkingstocht",
-    name: "Een muzikale ontdekkingstocht",
-    imageSrc: "https://images.unsplash.com/photo-1674049406265-76479a8ad498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGNoaWxkJTIwbXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-    imageAlt: "young children singing",
-    targetAudience: "Groep 1/2",
-    href: "/courses/amv-kleuters-een-muzikale-ontdekkingstocht",
-    price: "",
-    learningGoals: ['Actief luisteren', 'Bewegen op de maat van de muziek', 'Uitbreiden (muzikale) woordenschat', 'Samen zingen'],
-    introduction: 'In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren we luisteren, ontwikkelen we ons ritmegevoel, trainen we onze zangstem en maken we kennis met allerlei ritme-instrumenten',
-    signUp: false,
-    themes: ['muziek', 'korte cursus', 'amv']
-  },
-  {
-    id:"amv-bovenbouw-talent-klas",
-    name: "All about music",
-    imageSrc: "https://images.unsplash.com/photo-1572870014793-c39267e4d1ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=385&q=80",
-    imageAlt: "teenager singing",
-    targetAudience: "Groep 7/8",
-    href: "/courses/amv-bovenbouw-talent-klas",
-    price: "",
-    learningGoals: ["De 'beat' in een muziekstuk identificeren", "Een lied of rap uitvoeren","Eenvoudige ritmes (kwart- en achtste noten, max vier tellen) kunnen herkennen, uitvoeren en opschrijven", "Een (ritmisch) stuk componeren"],
-    introduction: "Deze cursus gaat over het ontdekken van jouw muzikale talenten! We gaan aan de slag met (body)percussie, ritmes, zang en rap. Aan het eind van de cursus maken we een mooie show met alles wat we geleerd hebben.",
-    signUp: false,
-    themes: ['muziek', 'korte cursus', 'amv']
+    id:"summer-singing-games",
+    name: "Summer Singing Games",
+    imageSrc: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    imageAlt: "children with music parachute",
+    targetAudience: "7 t/m 12 jaar",
+    href: "/courses/summer-singing-games",
+    price: "Gratis, met vrijwillige bijdrage",
+    learningGoals: ["Heel veel liedjes en spelletjes","Samen zingen", 'Ritmegevoel'],
+    introduction: "Zing en speel deze zomer mee met de Summer Singing Games! Spelenderwijs leer je in vier lessen alerlei liedjes en spelletjes, train je je stem en ontwikkel je ritmegevoel. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
+    signUp: true,
+    dayAndTime: "dinsdag, 15:00 (vier keer)",
+    startDate: [new Date('July 25, 2023')],
+    themes: ['zingen', 'games', 'korte cursus']
   },
   // {
   //   id:"choir-academy-level-1",
@@ -65,7 +54,7 @@ export const courses: Course[] = [
     introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
     signUp: true,
     dayAndTime: "Vrijdag, 16:00-17:00",
-    startDate: new Date('August 23, 2023'),
+    startDate: [new Date('August 23, 2023')],
     themes: ['zingen', 'koor', 'noten lezen']
   },
   // {
@@ -104,5 +93,31 @@ export const courses: Course[] = [
     introduction: "Contact houden met je (klein)kinderen? Op de hoogte blijven van nieuws? Genieten van mooie muziek of grappige video's? Veilig online gaan? In deze cursus komt het allemaal aan bod. Neem je eigen laptop en smartphone mee en ga aan de slag! Heb je een specifieke vraag, of wil je iets leren wat nog niet in het programma zit? Laat het even weten!",
     signUp: true,
     themes: ['digitale vaardigheden', 'korte cursus']
+  },
+  {
+    id:"amv-kleuters-een-muzikale-ontdekkingstocht",
+    name: "Een muzikale ontdekkingstocht",
+    imageSrc: "https://images.unsplash.com/photo-1674049406265-76479a8ad498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGNoaWxkJTIwbXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    imageAlt: "young children singing",
+    targetAudience: "Groep 1/2",
+    href: "/courses/amv-kleuters-een-muzikale-ontdekkingstocht",
+    price: "",
+    learningGoals: ['Actief luisteren', 'Bewegen op de maat van de muziek', 'Uitbreiden (muzikale) woordenschat', 'Samen zingen'],
+    introduction: 'In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren we luisteren, ontwikkelen we ons ritmegevoel, trainen we onze zangstem en maken we kennis met allerlei ritme-instrumenten',
+    signUp: false,
+    themes: ['muziek', 'korte cursus', 'amv']
+  },
+  {
+    id:"amv-bovenbouw-talent-klas",
+    name: "All about music",
+    imageSrc: "https://images.unsplash.com/photo-1572870014793-c39267e4d1ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=385&q=80",
+    imageAlt: "teenager singing",
+    targetAudience: "Groep 7/8",
+    href: "/courses/amv-bovenbouw-talent-klas",
+    price: "",
+    learningGoals: ["De 'beat' in een muziekstuk identificeren", "Een lied of rap uitvoeren","Eenvoudige ritmes (kwart- en achtste noten, max vier tellen) kunnen herkennen, uitvoeren en opschrijven", "Een (ritmisch) stuk componeren"],
+    introduction: "Deze cursus gaat over het ontdekken van jouw muzikale talenten! We gaan aan de slag met (body)percussie, ritmes, zang en rap. Aan het eind van de cursus maken we een mooie show met alles wat we geleerd hebben.",
+    signUp: false,
+    themes: ['muziek', 'korte cursus', 'amv']
   }
 ]

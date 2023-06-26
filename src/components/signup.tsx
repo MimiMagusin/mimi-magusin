@@ -18,18 +18,18 @@ export const SignUpComponent: React.FC<{course: Course }> = ({course}) => {
       <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
         <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">Waar en wanneer?</h2>
         <ul role="list" className="mt-8 pl-8 space-y-2 text-gray-600">
-          <li className="flex gap-x-3"><b>Cursusdag:</b> {course.dayAndTime}</li>
+          <li className="flex gap-x-3"><b className="w-24">Cursusdag:</b> {course.dayAndTime}</li>
           {
             course.startDate && course.startDate.length > 0 && 
             <li className="flex gap-x-3">
-              <b>Startdatum:</b> 
+              <b className="w-24">Startdatum:</b> 
               {
                 course.startDate?.map(formatDate) || ""
               }
             </li>
           }
-          <li className="flex gap-x-3"><b>Locatie:</b> {course.location}</li>
-          <li className="flex gap-x-3"><b>Prijs:</b> {course.location}</li>
+          <li className="flex gap-x-3"><b className="w-24">Locatie:</b> {course.location}</li>
+          <li className="flex gap-x-3"><b className="w-24">Prijs:</b> {course.price}</li>
         </ul>
       </div>
       <div className="lg:col-span-8 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl pt-8 flex">

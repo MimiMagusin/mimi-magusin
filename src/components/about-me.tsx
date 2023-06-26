@@ -3,7 +3,7 @@ import React from "react"
 
 export const AboutMe: React.FC<{ id: string }> = ({id}) => {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 p-8 lg:p-24 min-h-screen flex items-center bg-indigo-800">
+    <div className="relative isolate overflow-hidden bg-gray-900 p-8 lg:p-24 min-h-screen flex items-center bg-indigo-800 -mx-8">
       <div
         className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-5 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
         aria-hidden="true"
@@ -34,11 +34,11 @@ export const AboutMe: React.FC<{ id: string }> = ({id}) => {
         </div>
         <div className="basis-full lg:basis-1/2 p-4 h-full">
             {/* <Image 
-              src="/mimi-magusin.webp"
+              src="/mimi-magusin.jpg"
               alt="Mimi Magusin"
               fill
             /> */}
-          <img alt="Mimi Magusin" src="https://mimimagusin.files.wordpress.com/2014/03/12273682_731783956957444_2372358248743957008_o.jpg" className="w-4/6 h-full w-full m-auto object-cover rounded-md" />
+          <img alt="Mimi Magusin" src="/mimi-magusin.jpg" className="h-[750px] m-auto object-cover rounded-md" />
         </div>
       </div>
     </div>

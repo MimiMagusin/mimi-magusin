@@ -20,13 +20,14 @@ export const courses: Course[] = [
     imageAlt: "children with music parachute",
     targetAudience: "7 t/m 12 jaar",
     href: "/courses/summer-singing-games",
-    price: "Gratis, met vrijwillige bijdrage",
+    price: "Gratis!",
     learningGoals: ["Heel veel liedjes en spelletjes","Samen zingen", 'Ritmegevoel'],
     introduction: "Zing en speel deze zomer mee met de Summer Singing Games! Spelenderwijs leer je in vier lessen alerlei liedjes en spelletjes, train je je stem en ontwikkel je ritmegevoel. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
     signUp: true,
-    dayAndTime: "dinsdag, 15:00 (vier keer)",
-    startDate: [new Date('July 25, 2023')],
-    themes: ['zingen', 'games', 'korte cursus']
+    dayAndTime: "Vrijdag, 15:00-16:00, je mag één of beide dagen langskomen!",
+    startDate: [new Date('August 11, 2023'), new Date('August 18, 2023')],
+    themes: ['zingen', 'games', 'korte cursus'],
+    location: "Brede School West, Culemborg"
   },
   // {
   //   id:"choir-academy-level-1",

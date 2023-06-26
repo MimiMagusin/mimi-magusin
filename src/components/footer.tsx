@@ -8,7 +8,7 @@ type Section = {
 
 export const Footer: React.FC<{sections: Section[]}> = ({ sections }) => (
   <footer className=" w-full bg-gray-900 py-24 px-8 flex gap-x-4 gap-y-16 flex-wrap">
-    <div className="grow basis-9/12 justify-start lg:basis-auto">
+    <div className="grow basis-9/12 justify-start lg:basis-auto lg:ml-16">
       <h2 className="text-xl text-gray-300 font-bold">Navigatie</h2>
       <ul className="pt-2">
         {sections.map(section => <li key={`footer-nav-${section.id}`}><Link href={`${section.id}`} className='leading-8 text-gray-300 underline underline-offset-8'>{section.title}</Link></li>)}

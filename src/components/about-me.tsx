@@ -34,11 +34,11 @@ export const AboutMe: React.FC<{ id: string }> = ({id}) => {
         </div>
         <div className="basis-full lg:basis-1/2 p-4 h-full">
             {/* <Image 
-              src="/mimi-magusin.webp"
+              src="/mimi-magusin.jpg"
               alt="Mimi Magusin"
               fill
             /> */}
-          <img alt="Mimi Magusin" src="https://mimimagusin.files.wordpress.com/2014/03/12273682_731783956957444_2372358248743957008_o.jpg" className="w-4/6 h-full w-full m-auto object-cover rounded-md" />
+          <img alt="Mimi Magusin" src="/mimi-magusin.jpg" className="h-[750px] m-auto object-cover rounded-md" />
         </div>
       </div>
     </div>

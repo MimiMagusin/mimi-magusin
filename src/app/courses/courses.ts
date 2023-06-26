@@ -22,7 +22,7 @@ export const courses: Course[] = [
     href: "/courses/summer-singing-games",
     price: "Gratis!",
     learningGoals: ["Heel veel liedjes en spelletjes","Samen zingen", 'Ritmegevoel'],
-    introduction: "Zing en speel deze zomer mee met de Summer Singing Games! Spelenderwijs leer je in vier lessen alerlei liedjes en spelletjes, train je je stem en ontwikkel je ritmegevoel. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
+    introduction: "Zing en speel deze zomer mee met de Summer Singing Games! Spelenderwijs leer je alerlei liedjes en spelletjes, train je je stem en ontwikkel je ritmegevoel. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
     signUp: true,
     dayAndTime: "Vrijdag, 15:00-16:00, je mag één of beide dagen langskomen!",
     startDate: [new Date('August 11, 2023'), new Date('August 18, 2023')],

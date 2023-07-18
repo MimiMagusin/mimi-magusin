@@ -55,7 +55,7 @@ export const courses: Course[] = [
     introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
     signUp: true,
     dayAndTime: "Vrijdag, 16:00-17:00",
-    startDate: [new Date('August 23, 2023')],
+    startDate: [new Date('September 1, 2023')],
     themes: ['zingen', 'koor', 'noten lezen']
   },
   // {

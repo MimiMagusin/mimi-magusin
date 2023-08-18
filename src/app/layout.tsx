@@ -12,7 +12,7 @@ export const metadata = {
 }
 export const coursesId = "courses"
 export const aboutMeId = "about-me"
-export const sections = [{ title: "Home", id: "/" }, { title: "Cursussen", id: '/courses' }, { title: "Over mij", id: `/#${aboutMeId}`}];
+export const sections = [{ title: "Home", id: "/" }, { title: "Cursussen", id: '/courses' }, {title: "Choir Academy", id: '/choir-academy'}, { title: "Over mij", id: `/#${aboutMeId}`}];
 
 export default function RootLayout({
   children,

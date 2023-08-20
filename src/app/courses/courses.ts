@@ -34,7 +34,7 @@ export const courses: Course[] = [
     name: "Choir Academy Junior",
     imageSrc: "https://images.unsplash.com/photo-1559671902-3bdecacfdf7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2hpbGRyZW4lMjBzaW5naW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
     imageAlt: "boy singing in microphone",
-    targetAudience: "4 t/m 7 jaar",
+    targetAudience: "5 t/m 7 jaar",
     href: "/courses/choir-academy-level-1",
     price: "€160,- voor een jaar lang wekelijkse les, met uitzondering van de schoolvakanties",
     learningGoals: ["Hoe je je stem gezond gebruikt", "Samen zingen", "Ritmegevoel", "Notatie", "Heel veel liedjes en spelletjes",],

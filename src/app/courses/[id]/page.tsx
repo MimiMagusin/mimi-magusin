@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, ArrowRightIcon, CloudArrowUpIcon, LockClosedIcon, ServerIcon } from "@heroicons/react/24/outline";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { Course, courses } from "../courses";
 import { SignUpComponent } from "@/components/signup";
 

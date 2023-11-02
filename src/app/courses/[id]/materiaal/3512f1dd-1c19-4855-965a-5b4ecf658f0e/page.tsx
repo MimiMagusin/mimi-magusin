@@ -1,7 +1,4 @@
-import { ArrowLeftIcon, ArrowRightIcon, CloudArrowUpIcon, LockClosedIcon, ServerIcon } from "@heroicons/react/24/outline";
-import { SignUpComponent } from "@/components/signup";
-
-export default function CoursePage({ params }: { params: { id: string}}) {
+export default function CourseMaterialPage() {
 
   return (
     <div>

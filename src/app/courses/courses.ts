@@ -1,6 +1,6 @@
 import { ProductPreview } from "@/components/product";
 
-type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek' | 'games'
+type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek' | 'games' | 'optreden'
 
 export type Course = ProductPreview & {
   introduction?: string;
@@ -14,6 +14,22 @@ export type Course = ProductPreview & {
 
 export const courses: Course[] = [
   {
+    id:"choir-academy-lente-projecten",
+    name: "Lenteprojecten",
+    imageSrc: "/lente-projecten-2024.png",
+    imageAlt: "children with music parachute",
+    targetAudience: "4 t/m 12 jaar",
+    href: "/courses/choir-academy-lente-projecten",
+    price: "€35,-",
+    learningGoals: ["Optreden","Samen zingen", 'Ritmegevoel'],
+    introduction: "Zing mee met één van de lenteprojecten van de Choir Academy! Bereid een optreden voor in een groep kinderen van je eigen leeftijd en leer hoe je je stem gezond gebruikt, je jezelf goed kan presenteren op een podium en zelf een beetje notenschrift. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
+    signUp: true,
+    dayAndTime: "Vrijdag, 15:00-16:00, je mag één of beide dagen langskomen!",
+    startDate: [new Date('May 11, 2024')],
+    themes: ['zingen', 'optreden', 'korte cursus'],
+    location: "Brede School West, Culemborg"
+  },
+  {
     id: "choir-academy-speelklas",
     name: "Speelklas",
     imageSrc: "https://images.unsplash.com/photo-1674049406265-76479a8ad498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGNoaWxkJTIwbXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -24,10 +40,27 @@ export const courses: Course[] = [
     learningGoals: ["Samen zingen", "Ritmegevoel", "Spelen op schoolinstrumenten", "Heel veel liedjes en spelletjes"],
     introduction: "In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren hoe we onze stem goed gebruiken, naar elkaar kunnen luisteren en ontwikkelen we ons ritmegevoel.",
     signUp: true,
-    dayAndTime: "Onbekend - stuur een mail",
+    dayAndTime: "donderdag, 15:00",
+    startDate: [new Date('May 16, 2024')],
     themes: ["zingen", 'koor', 'korte cursus', 'amv'],
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg"
   },
+  //   {
+  //   id:"summer-singing-games",
+  //   name: "Summer Singing Games",
+  //   imageSrc: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+  //   imageAlt: "children with music parachute",
+  //   targetAudience: "7 t/m 12 jaar",
+  //   href: "/courses/summer-singing-games",
+  //   price: "Gratis!",
+  //   learningGoals: ["Heel veel liedjes en spelletjes","Samen zingen", 'Ritmegevoel'],
+  //   introduction: "Zing en speel deze zomer mee met de Summer Singing Games! Spelenderwijs leer je alerlei liedjes en spelletjes, train je je stem en ontwikkel je ritmegevoel. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
+  //   signUp: true,
+  //   dayAndTime: "Vrijdag, 15:00-16:00, je mag één of beide dagen langskomen!",
+  //   startDate: [new Date('August 11, 2023'), new Date('August 18, 2023')],
+  //   themes: ['zingen', 'games', 'korte cursus'],
+  //   location: "Brede School West, Culemborg"
+  // },
   {
     id:"choir-academy-level-1",
     name: "Startklas (algemene muzikale vorming)",

@@ -3,7 +3,7 @@ import { courses } from "../courses/courses";
 import { Product } from "@/components/product";
 
 export default function ChoirAcademy() {
-  const choirAcademyCourses = courses.filter(course => course.id === "choir-academy-level-1" || course.id === "choir-academy-level-2")
+  const choirAcademyCourses = courses.filter(course => course.id === "choir-academy-lente-projecten" || course.id === "choir-academy-speelklas" || course.id === "choir-academy-level-1" || course.id === "choir-academy-level-2")
   // console.log(choirAcademyCourses)
   return( 
     <div className="py-8">

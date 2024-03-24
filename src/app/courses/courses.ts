@@ -24,15 +24,15 @@ export const courses: Course[] = [
     learningGoals: ["Optreden","Samen zingen", 'Ritmegevoel'],
     introduction: "Zing mee met één van de lenteprojecten van de Choir Academy! Bereid een optreden voor in een groep kinderen van je eigen leeftijd en leer hoe je je stem gezond gebruikt, je jezelf goed kan presenteren op een podium en zelf een beetje notenschrift. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
     signUp: true,
-    dayAndTime: "Vrijdag, 15:00-16:00, je mag één of beide dagen langskomen!",
-    startDate: [new Date('May 11, 2024')],
+    dayAndTime: "Donderdag 15:30-16:15 en vrijdag, 15:00-15:45 (groep 3 t/m 5) of 16:00-17:00 (groep 6 t/m 8)",
+    startDate: [new Date('May 16, 2024'), new Date('May 17, 2024')],
     themes: ['zingen', 'optreden', 'korte cursus'],
     location: "Brede School West, Culemborg"
   },
   {
     id: "choir-academy-speelklas",
     name: "Speelklas",
-    imageSrc: "https://images.unsplash.com/photo-1674049406265-76479a8ad498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGNoaWxkJTIwbXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    imageSrc: "/speelklas.png",
     imageAlt: "young children singing",
     targetAudience: "Groep 1/2",
     href: "/courses/choir-academy-speelklas",
@@ -40,7 +40,7 @@ export const courses: Course[] = [
     learningGoals: ["Samen zingen", "Ritmegevoel", "Spelen op schoolinstrumenten", "Heel veel liedjes en spelletjes"],
     introduction: "In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren hoe we onze stem goed gebruiken, naar elkaar kunnen luisteren en ontwikkelen we ons ritmegevoel.",
     signUp: true,
-    dayAndTime: "donderdag, 15:00",
+    dayAndTime: "donderdag, 15:30",
     startDate: [new Date('May 16, 2024')],
     themes: ["zingen", 'koor', 'korte cursus', 'amv'],
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg"

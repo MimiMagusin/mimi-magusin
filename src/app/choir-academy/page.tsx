@@ -22,7 +22,7 @@ export default function ChoirAcademy() {
         We repeteren elke vrijdagmiddag in de Brede School West in Culemborg, kom gerust een keertje kijken!
       </p>
       <div className="w-full flex gap-8">
-        {choirAcademyCourses.map(course => <div key={course.id} className="basis-80"><Product  product={course} /></div>)}
+        <Products products={choirAcademyCourses} />
       </div>
 
     </div>

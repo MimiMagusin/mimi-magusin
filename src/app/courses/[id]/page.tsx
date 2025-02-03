@@ -17,7 +17,6 @@ export default function CoursePage() {
     setCourse(selectedCourse);
   }, [params.id]);
 
-  console.log("COURSE", course?.name);
   if (!course) return <p>Oeps er ging iets mis!</p>;
 
   return (

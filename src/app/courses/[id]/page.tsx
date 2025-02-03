@@ -1,18 +1,23 @@
+"use client";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { Course, courses } from "../courses";
 import { SignUpComponent } from "@/components/signup";
 import Link from "next/link";
-import Image from "next/image";
+import { use, useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 
-export default function CoursePage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const course: Course = courses.filter(
-    async (course) => course.id === (await params).id
-  )[0];
+export default function CoursePage() {
+  const params = useParams<{ id: string }>();
+  const [course, setCourse] = useState<Course>();
 
+  useEffect(() => {
+    const selectedCourse = courses.filter(
+      (course) => course.id === params.id
+    )[0];
+    setCourse(selectedCourse);
+  }, [params.id]);
+
+  console.log("COURSE", course?.name);
   if (!course) return <p>Oeps er ging iets mis!</p>;
 
   return (
@@ -71,12 +76,12 @@ export default function CoursePage({
                   <p className="text-gray-700">
                     {" "}
                     Toch interesse? Stuur een mailtje naar{" "}
-                    <a
+                    <Link
                       href="mailto:info@mimimagusin.com"
                       className="font-semibold italic"
                     >
                       info@mimimagusin.com
-                    </a>
+                    </Link>
                     .
                   </p>
                 </>
@@ -97,8 +102,8 @@ export default function CoursePage({
   );
 }
 
-export async function generateStaticParams() {
-  return courses.map((course) => ({
-    id: course.id,
-  }));
-}
+// export async function generateStaticParams() {
+//   return courses.map((course) => ({
+//     id: course.id,
+//   }));
+// }

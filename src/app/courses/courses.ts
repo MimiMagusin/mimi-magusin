@@ -112,7 +112,7 @@ export const courses: Course[] = [
   {
     id:"kec-project-orchestra",
     name: "KEC Project Orchestra",
-    imageSrc: "/kec-winterconcert-twee.jpg",
+    imageSrc: "/kec-winterconcert-twee.jpeg",
     imageAlt: "Gitaren - By Hes Wick",
     targetAudience: "Vanaf 9 jaar",
     href: "/courses/kec-project-orchestra",

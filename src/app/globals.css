@@ -1,6 +1,9 @@
+@import "tailwindcss";
+/* @import "tailwindcss";
+
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* Primary color: #ffe607 */
 

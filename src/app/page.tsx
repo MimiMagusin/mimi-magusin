@@ -1,10 +1,10 @@
-import { Hero } from '../components/hero';
-import { Products } from '../components/products';
-import { AboutMe } from '../components/about-me';
-import { courses } from './courses/courses';
-import { aboutMeId, coursesId } from './layout';
+import { Hero } from "../components/hero";
+import { Products } from "../components/products";
+import { AboutMe } from "../components/about-me";
+import { courses } from "./courses/courses";
+import { aboutMeId, coursesId } from "./navigation-vars";
 
-const ActionsHeroHome = () => ( 
+const ActionsHeroHome = () => (
   <section className="mt-10 flex items-center justify-center gap-x-6">
     <a
       href={`/courses`}
@@ -12,23 +12,29 @@ const ActionsHeroHome = () => (
     >
       Kies een cursus
     </a>
-    <a href={`#${aboutMeId}`} className="text-sm font-semibold leading-6 text-gray-900">
+    <a
+      href={`#${aboutMeId}`}
+      className="text-sm font-semibold leading-6 text-gray-900"
+    >
       Over mij <span aria-hidden="true">→</span>
     </a>
   </section>
-)
+);
 
 export default function Home() {
   return (
     <>
-      <Hero title="Mimi Magusin" subtitle="Muziek, Onderwijs & Code" ActionComponent={ActionsHeroHome}/>
+      <Hero
+        title="Mimi Magusin"
+        subtitle="Muziek, Onderwijs & Code"
+        ActionComponent={ActionsHeroHome}
+      />
       <section id={coursesId} className="min-h-screen py-16 sm:py-24 px-4">
-        <Products products={courses} withTitle/>
+        <Products products={courses} withTitle />
       </section>
       <section className="min-h-screen w-full">
-        <AboutMe id={aboutMeId}/>
+        <AboutMe id={aboutMeId} />
       </section>
     </>
-
-  )
+  );
 }

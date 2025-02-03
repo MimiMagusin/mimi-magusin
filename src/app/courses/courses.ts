@@ -1,6 +1,6 @@
 import { ProductPreview } from "@/components/product";
 
-type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek' | 'games' | 'optreden'
+type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek' | 'games' | 'optreden' | 'instrumenten' | 'samenspel'
 
 export type Course = ProductPreview & {
   introduction?: string;
@@ -40,8 +40,8 @@ export const courses: Course[] = [
     learningGoals: ["Samen zingen", "Ritmegevoel", "Spelen op schoolinstrumenten", "Heel veel liedjes en spelletjes"],
     introduction: "In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren hoe we onze stem goed gebruiken, naar elkaar kunnen luisteren en ontwikkelen we ons ritmegevoel.",
     signUp: true,
-    dayAndTime: "donderdag, 15:30",
-    startDate: [new Date('August 29, 2024')],
+    dayAndTime: "maandag & donderdag, 14:45",
+    startDate: [new Date('March 6, 2024'), new Date('March 11, 2024')],
     themes: ["zingen", 'koor', 'korte cursus', 'amv'],
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg"
   },
@@ -63,7 +63,7 @@ export const courses: Course[] = [
   // },
   {
     id:"choir-academy-level-1",
-    name: "Level 1 (algemene muzikale vorming)",
+    name: "Startkoor",
     imageSrc: "/choir-academy-startklas.jpg",
     imageAlt: "boy singing in microphone",
     targetAudience: "Vanaf 7 jaar",
@@ -72,14 +72,14 @@ export const courses: Course[] = [
     learningGoals: ["Hoe je je stem gezond gebruikt", "Samen zingen", "Ritmegevoel", "Notatie", "Heel veel liedjes en spelletjes",],
     introduction: "Met de leerlingen van de startklas werken we niet alleen aan onze stemmen, maar gaan we ook aan de slag met muzikale vorming. We oefenen met actief luisteren, muzikale vormen, de betekenis van allerlei soorten muziek en het muzikaal voorstellingvermogen. Spelenderwijs gaan we aan de slag met de basisbegrippen van de muziektheorie. Na deze cursus kan je verder met de Choir Academy van de Jong Talentklas of ben je perfect voorbereid om te beginnen met een instrument!",
     signUp: true,
-    dayAndTime: "Vrijdag, 15:00-15:45",
-    startDate: [new Date('August 30, 2024')],
+    dayAndTime: "Vrijdag, 15:00-16:00",
+    startDate: [new Date('March 6, 2024')],
     themes:['zingen', 'koor', 'noten lezen', 'amv'],
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg"
   },
   {
     id:"choir-academy-level-2",
-    name: "Level 2",
+    name: "Kinderkoor",
     imageSrc: "/schubert-2023.jpg",
     imageAlt: "Concert Gelderlandfabriek 2023",
     targetAudience: "Vanaf 9 jaar",
@@ -92,6 +92,38 @@ export const courses: Course[] = [
     dayAndTime: "Vrijdag, 16:00-17:00",
     startDate: [new Date('August 30, 2024')],
     themes: ['zingen', 'koor', 'noten lezen']
+  },
+  {
+    id:"algemene-muzikale-vorming",
+    name: "Intro - Maak kennis met instrumenten!",
+    imageSrc: "/wes-hicks-gitaren.jpg",
+    imageAlt: "Gitaren - By Hes Wick",
+    targetAudience: "Vanaf 8 jaar",
+    href: "/courses/algemene-muzikale-vorming",
+    price: "10 lessen + optreden voor €100,-",
+    learningGoals: ["Verschillende instrumenten uitproberen", "Noten lezen", "Podiumpresentatie"],
+    introduction: "Wil jij misschien wel op muziekles, maar weet je nog niet precies wat je zou willen doen? In deze lessen maak je kennis met verschillende instrumenten en leer je alvast de basis van het notenschrift, zodat je meteen aan de slag kan als je een instrument gekozen hebt!",
+    signUp: true,
+    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    dayAndTime: "Maandag, 15:30-16:30",
+    startDate: [new Date('March 11, 2024')],
+    themes: ['instrumenten', 'noten lezen']
+  },
+  {
+    id:"kec-project-orchestra",
+    name: "KEC Project Orchestra",
+    imageSrc: "/kec-winterconcert.jpg",
+    imageAlt: "Gitaren - By Hes Wick",
+    targetAudience: "Vanaf 9 jaar",
+    href: "/courses/kec-project-orchestra",
+    price: "€50,- voor 6 lessen + optreden",
+    learningGoals: ["Spelen in een orkest", "Spelen met een dirigent", "Optreden"],
+    introduction: "Speel je minimaal één jaar een instrument en lijkt het je leuk op te treden met anderen? In deze cursus bereiden we je in zes lessen voor op een spetterend optreden! We spelen partijen op verschillende niveaus, zodat iedereen voldoende wordt uitgedaagd.",
+    signUp: true,
+    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    dayAndTime: "Maandag, 16:30-17:30",
+    startDate: [new Date('March 4, 2024')],
+    themes: ['samenspel']
   },
   // {
   //   id:"choir-academy-level-3",

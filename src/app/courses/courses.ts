@@ -10,6 +10,7 @@ export type Course = ProductPreview & {
   startDate?: Date[];
   signUp?: boolean;
   themes: Theme[];
+  signUpLink?: string;
 }
 
 export const courses: Course[] = [
@@ -30,20 +31,38 @@ export const courses: Course[] = [
   //   location: "Brede School West, Culemborg"
   // },
   {
+    id: "zomerzangdagen",
+    name: "Zomerzangdagen",
+    imageSrc: "/summer-singing.png",
+    imageAlt: "children with music parachute",
+    targetAudience: "7 t/m 12 jaar",
+    href: "/courses/zomerzangdagen",  
+    price: "Gratis, vrijwillige bijdrage",
+    learningGoals: ["Heel veel liedjes en spelletjes", "Samen zingen", 'Toneel', 'Dans'],
+    introduction: "Zing en speel deze zomer mee met de Zomerzangdagen! Drie dagen zingen, dansen en toneelspelen, met een spetterend optreden op de laatste dag! Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom! Op basis van een vrijwillige bijdrage.",
+    signUp: true,
+    dayAndTime: "26, 27 & 28 augustus, 09:30-15:30",
+    startDate: [new Date('August 26, 2024')],
+    themes: ['zingen', 'games', 'korte cursus', 'optreden'],
+    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    signUpLink:"https://docs.google.com/forms/d/e/1FAIpQLSdT2vSTAa-pJS8HXbBAxtwKFSvu2JTKtihwIFd_mJB0s573iQ/viewform?usp=header"
+  },
+  {
     id: "choir-academy-speelklas",
     name: "Speelklas",
     imageSrc: "/speelklas.png",
-    imageAlt: "young children singing",
+    imageAlt: "Flyer Speelklas",
     targetAudience: "Groep 1/2",
     href: "/courses/choir-academy-speelklas",
-    price: "€7,50 per les, blokken van zeven lessen",
+    price: "€50,- voor 7 lessen",
     learningGoals: ["Samen zingen", "Ritmegevoel", "Spelen op schoolinstrumenten", "Heel veel liedjes en spelletjes"],
     introduction: "In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren hoe we onze stem goed gebruiken, naar elkaar kunnen luisteren en ontwikkelen we ons ritmegevoel.",
     signUp: true,
-    dayAndTime: "maandag & donderdag, 14:45",
+    dayAndTime: "woensdag, 14:45-15:25",
     startDate: [new Date('March 6, 2024'), new Date('March 11, 2024')],
     themes: ["zingen", 'koor', 'korte cursus', 'amv'],
-    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg"
+    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
   },
   //   {
   //   id:"summer-singing-games",
@@ -62,36 +81,72 @@ export const courses: Course[] = [
   //   location: "Brede School West, Culemborg"
   // },
   {
-    id:"choir-academy-level-1",
-    name: "Startkoor",
-    imageSrc: "/choir-academy-startklas.jpg",
-    imageAlt: "boy singing in microphone",
-    targetAudience: "Vanaf 7 jaar",
-    href: "/courses/choir-academy-level-1",
-    price: "€7,50 per les, 20% korting voor een jaarcursus",
+    id:"choir-academy-level-1-woensdag",
+    name: "Startkoor (woensdag)",
+    imageSrc: "/schubert-2023.jpg",
+    imageAlt: "Schubert concert in gelderlandfabriek",
+    targetAudience: "Groep 3 t/m 5",
+    href: "/courses/choir-academy-level-1-woensdag",
+    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
     learningGoals: ["Hoe je je stem gezond gebruikt", "Samen zingen", "Ritmegevoel", "Notatie", "Heel veel liedjes en spelletjes",],
     introduction: "Met de leerlingen van de startklas werken we niet alleen aan onze stemmen, maar gaan we ook aan de slag met muzikale vorming. We oefenen met actief luisteren, muzikale vormen, de betekenis van allerlei soorten muziek en het muzikaal voorstellingvermogen. Spelenderwijs gaan we aan de slag met de basisbegrippen van de muziektheorie. Na deze cursus kan je verder met de Choir Academy van de Jong Talentklas of ben je perfect voorbereid om te beginnen met een instrument!",
     signUp: true,
-    dayAndTime: "Vrijdag, 15:00-16:00",
-    startDate: [new Date('March 6, 2024')],
+    dayAndTime: "Woensdag, 15:30-16:25",
+    startDate: [new Date('September 3, 2025')],
     themes:['zingen', 'koor', 'noten lezen', 'amv'],
-    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg"
+    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
+  },
+  {
+    id:"choir-academy-level-1-vrijdag",
+    name: "Startkoor (vrijdag)",
+    imageSrc: "/choir-academy-startklas.jpg",
+    imageAlt: "Concert Buitengewoon Zingen",
+    targetAudience: "Groep 3 t/m 5",
+    href: "/courses/choir-academy-level-1-vrijdag",
+    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
+    learningGoals: ["Hoe je je stem gezond gebruikt", "Samen zingen", "Ritmegevoel", "Notatie", "Heel veel liedjes en spelletjes",],
+    introduction: "Met de leerlingen van de startklas werken we niet alleen aan onze stemmen, maar gaan we ook aan de slag met muzikale vorming. We oefenen met actief luisteren, muzikale vormen, de betekenis van allerlei soorten muziek en het muzikaal voorstellingvermogen. Spelenderwijs gaan we aan de slag met de basisbegrippen van de muziektheorie. Na deze cursus kan je verder met de Choir Academy van de Jong Talentklas of ben je perfect voorbereid om te beginnen met een instrument!",
+    signUp: true,
+    dayAndTime: "Vrijdag, 15:30-16:25",
+    startDate: [new Date('September 5, 2025')],
+    themes:['zingen', 'koor', 'noten lezen', 'amv'],
+    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
   },
   {
     id:"choir-academy-level-2",
-    name: "Kinderkoor",
-    imageSrc: "/schubert-2023.jpg",
+    name: "Tienerkoor",
+    imageSrc: "/groepsfoto.jpg",
     imageAlt: "Concert Gelderlandfabriek 2023",
     targetAudience: "Vanaf 9 jaar",
     href: "/courses/choir-academy-level-2",
-    price: "€7,50 per les, 20% korting voor een jaarcursus",
+    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
     learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
     introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
     signUp: true,
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
-    dayAndTime: "Vrijdag, 16:00-17:00",
-    startDate: [new Date('August 30, 2024')],
-    themes: ['zingen', 'koor', 'noten lezen']
+    dayAndTime: "Vrijdag, 15:30-16:25",
+    startDate: [new Date('September 3, 2025')],
+    themes: ['zingen', 'koor', 'noten lezen'],
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
+  },
+  {
+    id:"choir-academy-level-3",
+    name: "VoxNext",
+    imageSrc: "https://images.unsplash.com/photo-1669901529599-20a128702da8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageAlt: "VoxNext 2023",
+    targetAudience: "Vanaf 13 jaar",
+    href: "/courses/choir-academy-level-3",
+    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
+    learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
+    introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
+    signUp: true,
+    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    dayAndTime: "Woensdag, 19:00-20:30",
+    startDate: [new Date('September 3, 2025')],
+    themes: ['zingen', 'koor', 'noten lezen'],
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
   },
   {
     id:"algemene-muzikale-vorming",

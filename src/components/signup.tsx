@@ -55,7 +55,19 @@ export const SignUpComponent: React.FC<{ course: Course }> = ({ course }) => {
           >
             info@mimimagusin.com
           </Link>
-          <span>voor meer informatie</span>
+          <span>voor meer informatie</span>{" "}
+          {course.signUpLink && (
+            <span>
+              of ga direct naar{" "}
+              <Link
+                href={course.signUpLink}
+                className="font-semibold leading-6 text-indigo-600 underline"
+              >
+                aanmelden
+              </Link>
+              .
+            </span>
+          )}
         </p>
       </div>
     </>

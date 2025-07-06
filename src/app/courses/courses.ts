@@ -59,7 +59,7 @@ export const courses: Course[] = [
     introduction: "In deze cursus gaan we op muzikale ontdekkingstocht! Al zingend, dansend en luisterend ontdekken we de wereld om ons heen. Ondertussen leren hoe we onze stem goed gebruiken, naar elkaar kunnen luisteren en ontwikkelen we ons ritmegevoel.",
     signUp: true,
     dayAndTime: "woensdag, 14:45-15:25",
-    startDate: [new Date('March 6, 2024'), new Date('March 11, 2024')],
+    startDate: [new Date('September 3, 2025')],
     themes: ["zingen", 'koor', 'korte cursus', 'amv'],
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
     signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"

@@ -21,7 +21,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
-      <GoogleTagManager gtmId="G-M0EQHNR8H2" />
       <body className={inter.className}>
         <Header sections={sections} />
         <main className="flex min-h-screen flex-col items-center justify-between pt-8 px-8 w-full overflow-hidden">
@@ -29,6 +28,7 @@ export default function RootLayout({
         </main>
         <Footer sections={sections} />
       </body>
+      <GoogleTagManager gtmId="G-M0EQHNR8H2" />
     </html>
   );
 }

@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { sections } from "./navigation-vars";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,13 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
-      <GoogleTagManager gtmId="G-M0EQHNR8H2" />
       <body className={inter.className}>
         <Header sections={sections} />
         <main className="flex min-h-screen flex-col items-center justify-between pt-8 px-8 w-full overflow-hidden">
           {children}
         </main>
         <Footer sections={sections} />
+<GoogleAnaltics gaId="G-M0EQHNR8H2" />
       </body>
     </html>
   );

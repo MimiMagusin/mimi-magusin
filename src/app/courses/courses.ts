@@ -33,7 +33,7 @@ export const courses: Course[] = [
   {
     id: "zomerzangdagen",
     name: "Zomerzangdagen",
-    imageSrc: "/summer-singing.png",
+    imageSrc: "/summer-singing-games.png",
     imageAlt: "children with music parachute",
     targetAudience: "7 t/m 12 jaar",
     href: "/courses/zomerzangdagen",  

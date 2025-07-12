@@ -64,7 +64,7 @@ export default function CoursePage() {
                 </ul>
               </div>
             </div>
-            <div className="lg:col-span-8 lg:col-start-1 lg:row-start-3 lg:mx-auto lg:w-full lg:max-w-lg">
+            <div className="lg:col-span-8 lg:col-start-1 lg:row-start-3 lg:mx-auto lg:w-full lg:max-w-lg mb-8">
               {course.signUp ? (
                 <SignUpComponent course={course} />
               ) : (

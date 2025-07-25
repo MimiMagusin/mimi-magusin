@@ -42,7 +42,7 @@ export const courses: Course[] = [
     introduction: "Zing en speel deze zomer mee met de Zomerzangdagen! Drie dagen zingen, dansen en toneelspelen, met een spetterend optreden op de laatste dag! Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom! Op basis van een vrijwillige bijdrage.",
     signUp: true,
     dayAndTime: "26, 27 & 28 augustus, 09:30-15:30",
-    startDate: [new Date('August 26, 2024')],
+    startDate: [new Date('August 26, 2025')],
     themes: ['zingen', 'games', 'korte cursus', 'optreden'],
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
     signUpLink:"https://docs.google.com/forms/d/e/1FAIpQLSdT2vSTAa-pJS8HXbBAxtwKFSvu2JTKtihwIFd_mJB0s573iQ/viewform?usp=header"
@@ -94,7 +94,7 @@ export const courses: Course[] = [
     dayAndTime: "Woensdag, 15:30-16:25",
     startDate: [new Date('September 3, 2025')],
     themes:['zingen', 'koor', 'noten lezen', 'amv'],
-    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    location: "Open Hof, Zaal 6, Beethovenlaan 2, Culemborg",
     signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
   },
   {
@@ -142,7 +142,7 @@ export const courses: Course[] = [
     learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
     introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
     signUp: true,
-    location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
+    location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
     dayAndTime: "Woensdag, 19:00-20:30",
     startDate: [new Date('September 3, 2025')],
     themes: ['zingen', 'koor', 'noten lezen'],

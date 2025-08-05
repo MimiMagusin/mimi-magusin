@@ -13,22 +13,17 @@
   --background-end-rgb: 255, 249, 150;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb:255, 240, 7;
-    --background-end-rgb: 255, 255, 255;
-  }
-} */
+.mask-custom-size {
+  mask-repeat: no-repeat;
+  mask-size: 150%;
+  /* Vergroot het masker */
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 150%;
+  -webkit-mask-position: center;
+}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(var(--background-end-rgb), 1) 25%,
-      rgba(var(--background-start-rgb), 1) 80%
-    )
-    rgba(var(--background-start-rgb), 0.7);
+
   overflow-x: hidden;
 }

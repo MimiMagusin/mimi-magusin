@@ -1,5 +1,5 @@
 import React from "react";
-import { Product, ProductPreview } from "./product";
+import { Product } from "./product";
 import { Course } from "@/app/courses/courses";
 
 export const Products: React.FC<{
@@ -9,7 +9,7 @@ export const Products: React.FC<{
   <>
     <div className="mx-auto max-w-2xl lg:max-w-7xl ">
       {withTitle && (
-        <h2 className="text-4xl font-bold tracking-tight text-gray-900">
+        <h2 className="text-4xl font-bold tracking-tight text-indigo-950">
           Cursussen
         </h2>
       )}

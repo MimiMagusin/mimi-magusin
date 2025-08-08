@@ -3,47 +3,16 @@ import React from "react";
 
 export const AboutMe: React.FC<{ id: string }> = ({ id }) => {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 p-8 lg:p-24 min-h-screen flex items-center bg-indigo-800 -mx-8">
-      <div
-        className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-5 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
-        aria-hidden="true"
-      >
-        <div
-          className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        />
+    <div className="w-full flex flex-wrap-reverse lg:flex-nowrap items-center max-w-6xl m-auto gap-8">
+      <div className="w-full lg:w-1/2">
+        <AboutMeText id={id} />
       </div>
-      <div
-        className="absolute -top-52 left-1/2 -z-5 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
-        aria-hidden="true"
-      >
-        <div
-          className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
+      <div className="w-full lg:w-1/2 h-full">
+        <img
+          alt="Mimi Magusin"
+          src="/mimi-magusin.jpg"
+          className="w-full h-auto max-h-[750px] object-cover rounded-md"
         />
-      </div>
-      <div className="w-full flex flex-wrap-reverse items-center">
-        <div className="basis-full lg:basis-1/2 p-4">
-          <AboutMeText id={id} />
-        </div>
-        <div className="basis-full lg:basis-1/2 p-4 h-full">
-          {/* <Image 
-              src="/mimi-magusin.jpg"
-              alt="Mimi Magusin"
-              fill
-            /> */}
-          <img
-            alt="Mimi Magusin"
-            src="/mimi-magusin.jpg"
-            className="h-[750px] m-auto object-cover rounded-md"
-          />
-        </div>
       </div>
     </div>
   );
@@ -51,9 +20,9 @@ export const AboutMe: React.FC<{ id: string }> = ({ id }) => {
 
 const AboutMeText: React.FC<{ id: string }> = ({ id }) => {
   return (
-    <div id={id} className="mx-auto max-w-7xl">
-      <div className="mx-auto max-w-2xl lg:mx-0 rounded-md">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
+    <div id={id} className="mx-auto max-w-6xl">
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight text-indigo-900 sm:text-5xl">
           Over mij
         </h2>
         <p className="mt-6 text-md leading-8 text-gray-300">
@@ -76,13 +45,14 @@ const AboutMeText: React.FC<{ id: string }> = ({ id }) => {
         <p className="mt-6 text-md leading-8 text-gray-300">
           In 2023 ben ik begonnen met de opleiding <b>Docent Muziek op Maat</b>{" "}
           <i>(Artez, Zwolle)</i> en ondertussen ben ik werkzaam als docent bij{" "}
-          <b>Kunsteducatie Culemborg</b>, <b>de Utrechtse Muziekschool</b> en
-          bij de <b>Godelindeschool</b> in Hilversum.
+          <b>Kunsteducatie Culemborg</b>, <b>Vrije School Utrecht</b> en op
+          projectbasis bij verschillende basisscholen in de regio Rivierenland.
         </p>
         <p className="mt-6 text-md leading-8 text-gray-300">
           Daarnaast ben ik <b>muzikaal leider</b> en <b>dirigent</b> van de
           zang-community <b>Ilico</b>, waarmee we korte concertjes organiseren
-          op bijzondere locaties.
+          op bijzondere locaties en dirigeer ik de kinder- en jongerenkoren van
+          de <b>KEC Choir Academy</b> in Culemborg
         </p>
         <p className="mt-6 text-md leading-8 text-gray-300">
           Ik help kinderen, jongeren en volwassenen graag om het{" "}

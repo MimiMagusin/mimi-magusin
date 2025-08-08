@@ -6,7 +6,9 @@ import { Button } from "@heroui/button";
 import { Course, courses } from "../courses";
 import { blueButton, yellowButton } from "@/components/styling-strings";
 import { Divider } from "@heroui/divider";
-import { MusicalNoteIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon, MusicalNoteIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
+
 export default function CourseDetailPage() {
   const params = useParams<{ id: string }>();
   const [course, setCourse] = useState<Course>();
@@ -38,9 +40,9 @@ export default function CourseDetailPage() {
             <p className="text-primary text-lg font-semibold">{course.price}</p>
           </div>
           <div className="flex flex-col md:items-end gap-2">
-            {course.signUp && (
+            {course.signUp && course.signUpLink && (
               <Button size="lg" className={`${yellowButton}`}>
-                Aanmelden
+                Plan een proefles
               </Button>
             )}
           </div>
@@ -58,15 +60,15 @@ export default function CourseDetailPage() {
           {course.learningGoals && course.learningGoals.length > 0 && (
             <div className="basis-xs">
               {" "}
-              <h2 className="text-2xl font-semibold mb-3 text-indigo-900">
+              <h2 className="text-2xl font-semibold mb-3 text-indigo-950">
                 Wat ga je leren?
               </h2>
               <ul className="space-y-2">
                 {course.learningGoals.map((goal, index) => (
                   <li key={index} className="flex items-center gap-2 ml-4">
                     <MusicalNoteIcon
-                      height="16px"
-                      className="text-indigo-800"
+                      height="20px"
+                      className="text-indigo-950"
                     />
                     {goal}
                   </li>
@@ -77,7 +79,7 @@ export default function CourseDetailPage() {
 
           {/* Praktische informatie */}
           <div className="basis-lg">
-            <div className="bg-yellow-200 p-4 rounded-lg">
+            <div className="bg-yellow-200 p-4 rounded-lg max-w-[80vw]">
               <div>
                 <h3 className="text-xl font-semibold mb-3">
                   Praktische informatie
@@ -96,9 +98,25 @@ export default function CourseDetailPage() {
                 </p>
               </div>
             </div>
-            {course.signUp && (
-              <Button className={`${blueButton} mt-6`}>Aanmelden</Button>
-            )}
+            <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-4 place-center mt-4">
+              <motion.a whileHover={{ scale: 1.05 }}>
+                <Button
+                  className={yellowButton}
+                  href="https://forms.gle/ujGWSyBH1zWhLoir7"
+                >
+                  Plan een proefles
+                </Button>
+              </motion.a>
+
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                className="hover:text-gray-300 underline underline-offset-4 flex items-center gap-1"
+                href="mailto:info@mimimagusin.com"
+              >
+                mail: info@mimimagusin.com
+                <ArrowRightIcon height="16" />
+              </motion.a>
+            </div>
           </div>
         </div>
         {/* Terugknop */}

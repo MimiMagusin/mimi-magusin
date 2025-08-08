@@ -1,6 +1,7 @@
+"use client";
 import { Course } from "@/app/courses/courses";
-import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export type ProductPreview = {
   id: string;
@@ -17,7 +18,8 @@ type ProductProps = {
 };
 
 export const Product: React.FC<ProductProps> = ({ product }) => (
-  <div
+  <motion.div
+    whileHover={{ scale: 1.05 }}
     className="relative h-96 w-full flex items-end justify-start text-left bg-cover bg-center rounded-md hover:opacity-90 overflow-hidden"
     style={{ backgroundImage: `url(${product.imageSrc})` }}
   >
@@ -44,5 +46,5 @@ export const Product: React.FC<ProductProps> = ({ product }) => (
         ))}
       </ul>
     </div>
-  </div>
+  </motion.div>
 );

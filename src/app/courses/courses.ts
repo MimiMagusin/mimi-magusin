@@ -1,8 +1,6 @@
-import { ProductPreview } from "@/components/product";
-
 type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek' | 'games' | 'optreden' | 'instrumenten' | 'samenspel'
 
-export type Course = ProductPreview & {
+export type Course = {
   introduction?: string;
   learningGoals?: string[];
   location?: string;
@@ -11,25 +9,17 @@ export type Course = ProductPreview & {
   signUp?: boolean;
   themes: Theme[];
   signUpLink?: string;
+  id: string;
+  name: string;
+  imageSrc: string;
+  imageAlt: string;
+  targetAudience: string;
+  href: string;
+  price: string;
+  shortIntro?: string;
 }
 
 export const courses: Course[] = [
-  // {
-  //   id:"choir-academy-lente-projecten",
-  //   name: "Lenteprojecten",
-  //   imageSrc: "/lente-projecten-2024.png",
-  //   imageAlt: "children with music parachute",
-  //   targetAudience: "4 t/m 12 jaar",
-  //   href: "/courses/choir-academy-lente-projecten",
-  //   price: "€35,-",
-  //   learningGoals: ["Optreden","Samen zingen", 'Ritmegevoel'],
-  //   introduction: "Zing mee met één van de lenteprojecten van de Choir Academy! Bereid een optreden voor in een groep kinderen van je eigen leeftijd en leer hoe je je stem gezond gebruikt, je jezelf goed kan presenteren op een podium en zelf een beetje notenschrift. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
-  //   signUp: true,
-  //   dayAndTime: "Donderdag 15:30-16:15 en vrijdag, 15:00-15:45 (groep 3 t/m 5) of 16:00-17:00 (groep 6 t/m 8)",
-  //   startDate: [new Date('May 16, 2024'), new Date('May 17, 2024')],
-  //   themes: ['zingen', 'optreden', 'korte cursus'],
-  //   location: "Brede School West, Culemborg"
-  // },
   {
     id: "zomerzangdagen",
     name: "Zomerzangdagen",
@@ -45,7 +35,8 @@ export const courses: Course[] = [
     startDate: [new Date('August 26, 2025')],
     themes: ['zingen', 'games', 'korte cursus', 'optreden'],
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
-    signUpLink:"https://docs.google.com/forms/d/e/1FAIpQLSdT2vSTAa-pJS8HXbBAxtwKFSvu2JTKtihwIFd_mJB0s573iQ/viewform?usp=header"
+    signUpLink:"https://docs.google.com/forms/d/e/1FAIpQLSdT2vSTAa-pJS8HXbBAxtwKFSvu2JTKtihwIFd_mJB0s573iQ/viewform?usp=header",
+    shortIntro: "Drie dagen zingen, dansen en toneelspelen, met een spetterend optreden op de laatste dag!"
   },
   {
     id: "choir-academy-speelklas",
@@ -62,24 +53,9 @@ export const courses: Course[] = [
     startDate: [new Date('September 3, 2025')],
     themes: ["zingen", 'koor', 'korte cursus', 'amv'],
     location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
-    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
+    shortIntro: "Ga op muzikale ontdekkingstocht! Kom zingen, spelen op instrumenten beleef allerlei muzikale avonturen."
   },
-  //   {
-  //   id:"summer-singing-games",
-  //   name: "Summer Singing Games",
-  //   imageSrc: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  //   imageAlt: "children with music parachute",
-  //   targetAudience: "7 t/m 12 jaar",
-  //   href: "/courses/summer-singing-games",
-  //   price: "Gratis!",
-  //   learningGoals: ["Heel veel liedjes en spelletjes","Samen zingen", 'Ritmegevoel'],
-  //   introduction: "Zing en speel deze zomer mee met de Summer Singing Games! Spelenderwijs leer je alerlei liedjes en spelletjes, train je je stem en ontwikkel je ritmegevoel. Of je nou veel zangervaring hebt of helemaal geen, iedereen is van harte welkom!",
-  //   signUp: true,
-  //   dayAndTime: "Vrijdag, 15:00-16:00, je mag één of beide dagen langskomen!",
-  //   startDate: [new Date('August 11, 2023'), new Date('August 18, 2023')],
-  //   themes: ['zingen', 'games', 'korte cursus'],
-  //   location: "Brede School West, Culemborg"
-  // },
   {
     id:"choir-academy-level-1-woensdag",
     name: "Startkoor (woensdag)",
@@ -95,7 +71,8 @@ export const courses: Course[] = [
     startDate: [new Date('September 3, 2025')],
     themes:['zingen', 'koor', 'noten lezen', 'amv'],
     location: "Open Hof, Zaal 6, Beethovenlaan 2, Culemborg",
-    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
+    shortIntro: "Ontwikkel je stem en je muzikaliteit. Maak kennis met allerlei soorten muziek en straal op het podium."
   },
   {
     id:"choir-academy-level-1-vrijdag",
@@ -112,14 +89,15 @@ export const courses: Course[] = [
     startDate: [new Date('September 5, 2025')],
     themes:['zingen', 'koor', 'noten lezen', 'amv'],
     location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
-    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
+    shortIntro: "Ontwikkel je stem en je muzikaliteit. Maak kennis met allerlei soorten muziek en straal op het podium."
   },
   {
     id:"choir-academy-level-2",
     name: "Tienerkoor",
     imageSrc: "/groepsfoto.jpg",
     imageAlt: "Concert Gelderlandfabriek 2023",
-    targetAudience: "Vanaf 9 jaar",
+    targetAudience: "Groep 6 t/m 8",
     href: "/courses/choir-academy-level-2",
     price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
     learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
@@ -129,25 +107,27 @@ export const courses: Course[] = [
     dayAndTime: "Vrijdag, 15:30-16:25",
     startDate: [new Date('September 3, 2025')],
     themes: ['zingen', 'koor', 'noten lezen'],
-    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
+    shortIntro: "Ontwikkel je stem en podiumpresentatie, leer noten lezen en zing in meerstemmige arrangementen."
   },
-  // {
-  //   id:"choir-academy-level-3",
-  //   name: "VoxNext",
-  //   imageSrc: "https://images.unsplash.com/photo-1669901529599-20a128702da8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   imageAlt: "VoxNext 2023",
-  //   targetAudience: "Vanaf 13 jaar",
-  //   href: "/courses/choir-academy-level-3",
-  //   price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
-  //   learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
-  //   introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
-  //   signUp: true,
-  //   location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
-  //   dayAndTime: "Woensdag, 19:00-20:30",
-  //   startDate: [new Date('September 3, 2025')],
-  //   themes: ['zingen', 'koor', 'noten lezen'],
-  //   signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header"
-  // },
+  {
+    id:"choir-academy-level-3",
+    name: "VoxNext",
+    imageSrc: "https://images.unsplash.com/photo-1669901529599-20a128702da8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageAlt: "VoxNext 2023",
+    targetAudience: "Vanaf 13 jaar",
+    href: "/courses/choir-academy-level-3",
+    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
+    learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
+    introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
+    signUp: true,
+    location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
+    dayAndTime: "woensdag, 19:00-20:30",
+    startDate: [new Date('September 3, 2025')],
+    themes: ['zingen', 'koor', 'noten lezen'],
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
+    shortIntro: "Van musical tot klassiek en van volksmuziek tot pop, zing muziek van over de hele wereld. Ontwikkel je stem en leer noten lezen!"
+  },
   {
     id:"algemene-muzikale-vorming",
     name: "Intro - Maak kennis met instrumenten!",
@@ -180,17 +160,6 @@ export const courses: Course[] = [
     startDate: [new Date('March 4, 2024')],
     themes: ['samenspel']
   },
-  // {
-  //   id:"choir-academy-level-3",
-  //   name: "Choir Academy - Level 3",
-  //   imageSrc: "https://images.unsplash.com/photo-1551980349-75d992b49c86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80",
-  //   imageAlt: "woman singing, raising hands",
-  //   targetAudience: " 13 t/m 18",
-  //   href: "/courses/choir-academy-level-1",
-  //   price: "",
-  //   learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Samen zingen"],
-  //   introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. In deze cursussen"
-  // },
   // {
   //   id:"vu-luisteren-naar-klassieke-muziek",
   //   name: "Klassieke Muziek: van luisteren naar begrijpen",

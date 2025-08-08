@@ -7,17 +7,18 @@ import {
   MusicalNoteIcon,
 } from "@heroicons/react/24/solid";
 import { blueButton, yellowButton } from "./styling-strings";
+import { motion } from "framer-motion";
 
 export default function IntroBlok() {
   return (
     <section
       id={introId}
-      className="max-w-6xl mx-auto px-6 py-12 md:grid md:grid-cols-2 gap-10 items-center min-h-screen"
+      className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-10 md:grid md:grid-cols-2 md:gap-10 items-center min-h-screen"
     >
       {/* Foto */}
       <div className="relative">
         <img
-          src="/mimi-magusin.jpg"
+          src="/mm24-winterconcert-1.jpg"
           alt="Mimi Magusin"
           className="max-h-[80vh] rounded-[2rem] shadow-lg transform hover:scale-105 transition duration-500"
         />
@@ -29,7 +30,7 @@ export default function IntroBlok() {
           <span className="text-yellow-400">Muziekles</span> met aandacht
         </h2>
         <p className="text-gray-700 mb-6">
-          Ik ben Mimi Magusin. Met mijn muzieklessen in op en buiten scholen in
+          Ik ben Mimi Magusin. Met mijn muzieklessen binnen en buiten scholen in
           Culemborg en omgeving help ik kinderen, jongeren en volwassenen
           groeien in muzikaliteit, plezier en zelfvertrouwen.
         </p>
@@ -55,12 +56,20 @@ export default function IntroBlok() {
           </li>
         </ul>
         <div className="flex gap-4 flex-wrap">
-          <a href={`#${coursesId}`} className={blueButton}>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            href={`#${coursesId}`}
+            className={blueButton}
+          >
             Naar het aanbod →
-          </a>
-          <a href={`#${aboutMeId}`} className={yellowButton}>
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            href={`#${aboutMeId}`}
+            className={yellowButton}
+          >
             Meer over mij →
-          </a>
+          </motion.a>
         </div>
       </div>
     </section>

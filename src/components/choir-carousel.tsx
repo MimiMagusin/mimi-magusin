@@ -62,7 +62,7 @@ export default function ChoirCarousel() {
         Onze Koren
       </motion.h2>
 
-      <div className="w-[90vw] mx-auto px-6 py-12">
+      <div className="w-full mx-auto px-6 py-12">
         <Slider {...settings}>
           <div className="px-4 xl:h-[20rem]">
             <Card

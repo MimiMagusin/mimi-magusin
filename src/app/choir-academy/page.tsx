@@ -83,13 +83,14 @@ export default function ChoirAcademy() {
       </section>
 
       {/* PROGRAMMA */}
-      <section className="mt-32 bg-gradient-to-t from-yellow-300/80 to-transparent">
-        <div className="max-w-6xl mx-auto px-4 overflow-hidden">
+      <section className="mt-32 bg-linear-to-t from-indigo-900/70 to-transparent">
+        <div className="max-w-screen mx-auto px-4 overflow-hidden">
           <ChoirCarousel />
         </div>
       </section>
-      <section>
-        <div className="container mx-auto my-8 p-8 bg-indigo-800/10 rounded-lg h-fit">
+
+      <section className="bg-linear-to-b from-yellow-300 to-yellow-300/20 py-32 px-8">
+        <div className="container mx-auto my-8 p-8 bg-indigo-300 rounded-lg h-fit max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-6">Praktische informatie</h2>
           <ul className="text-lg text-gray-800 space-y-4">
             <li className="flex items-center gap-3">
@@ -113,12 +114,12 @@ export default function ChoirAcademy() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-yellow-300/80 to-transparent py-8">
+      <section className="bg-linear-to-t from-yellow-300 to-yellow-300/20 py-32 px-8">
         <Products products={choirAcademyCourses} withTitle />
       </section>
 
       {/* OVER MIMI */}
-      <section className="bg-gradient-to-b from-yellow-300/80 to-transparent">
+      <section className="bg-linear-to-t from-indigo-900/70 to-transparent">
         <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-8 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -139,14 +140,19 @@ export default function ChoirAcademy() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1"
+            className="flex-1 max-w-6xl mx-auto px-4"
           >
             <h2 className="text-3xl font-bold mb-4">Over Mimi Magusin</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              Mimi Magusin is een ervaren koordirigent en muziekdocent…
+            <p className="text-lg text-gray-900 mb-4">
+              Mimi Magusin is een ervaren koordirigent en muziekdocent. Met haar
+              energieke en toegankelijke stijl weet ze kinderen en jongeren te
+              inspireren om het beste uit zichzelf te halen, zowel muzikaal als
+              persoonlijk.
             </p>
-            <p className="text-lg text-gray-700">
-              Ze helpt haar leerlingen hun talenten te ontdekken…
+            <p className="text-lg text-gray-900">
+              Ze helpt haar leerlingen hun talenten te ontdekken en ontwikkelen,
+              met veel aandacht voor zelfstandigheid, samenwerking en
+              muzikaliteit.
             </p>
           </motion.div>
         </div>

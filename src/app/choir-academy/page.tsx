@@ -19,6 +19,7 @@ import LearningGoalsSection from "@/components/choir-academy-learning-goals";
 import { yellowButton } from "@/components/styling-strings";
 import { Input, Textarea } from "@headlessui/react";
 import ChoirCarousel from "@/components/choir-carousel";
+import { Products } from "@/components/products";
 
 interface Program {
   title: string;
@@ -30,14 +31,9 @@ interface Program {
 }
 
 export default function ChoirAcademy() {
-  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">(
-    "idle"
+  const choirAcademyCourses = courses.filter((course) =>
+    course.id.includes("choir-academy")
   );
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormStatus("success");
-  };
 
   const slides: Slide[] = [
     {
@@ -69,10 +65,10 @@ export default function ChoirAcademy() {
 
   const heroProps = {
     firstWord: "Zing.",
-    secondWord: "Straal.",
+    secondWord: "Ontdek.",
     thirdWord: "Groei.",
     subtitle:
-      "De plek waar kinderen en jongeren samen zingen, groeien en plezier maken. Leer je stem kennen, zing in meerdere talen en schitteren op het podium.",
+      "Samen zingen, groeien en plezier maken. Ontdek je stem, zing in meerdere talen en schitter op het podium.",
     secondCTA: {
       label: "Meld je aan voor een proefles",
       href: "#contact",
@@ -87,16 +83,13 @@ export default function ChoirAcademy() {
       </section>
 
       {/* PROGRAMMA */}
-      <section className="p-16 bg-linear-to-t from-yellow-300/80 to-transparent mt-32">
-        <ChoirCarousel />
-      </section>
-
-      <section className="max-w-6xl py-16 px-6 grid smgrid-cols-1 lg:grid-cols-2 gap-4 m-auto place-items-center">
-        <div className="p-16">
-          <LearningGoalsSection />
+      <section className="mt-32 bg-gradient-to-t from-yellow-300/80 to-transparent">
+        <div className="max-w-6xl mx-auto px-4 overflow-hidden">
+          <ChoirCarousel />
         </div>
-
-        <div className="container mx-auto p-8 bg-indigo-800/10 rounded-lg h-fit">
+      </section>
+      <section>
+        <div className="container mx-auto my-8 p-8 bg-indigo-800/10 rounded-lg h-fit">
           <h2 className="text-3xl font-bold mb-6">Praktische informatie</h2>
           <ul className="text-lg text-gray-800 space-y-4">
             <li className="flex items-center gap-3">
@@ -120,8 +113,12 @@ export default function ChoirAcademy() {
         </div>
       </section>
 
+      <section className="bg-gradient-to-b from-yellow-300/80 to-transparent py-8">
+        <Products products={choirAcademyCourses} withTitle />
+      </section>
+
       {/* OVER MIMI */}
-      <section className="bg-linear-to-b from-yellow-300/80 to-transparent">
+      <section className="bg-gradient-to-b from-yellow-300/80 to-transparent">
         <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-8 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -134,9 +131,10 @@ export default function ChoirAcademy() {
               alt="Mimi Magusin"
               width={400}
               height={400}
-              className="rounded-2xl object-cover shadow-lg mx-auto"
+              className="w-full max-w-[320px] sm:max-w-[400px] aspect-square rounded-2xl object-cover shadow-lg mx-auto"
             />
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -145,15 +143,10 @@ export default function ChoirAcademy() {
           >
             <h2 className="text-3xl font-bold mb-4">Over Mimi Magusin</h2>
             <p className="text-lg text-gray-700 mb-4">
-              Mimi Magusin is een ervaren koordirigent en muziekdocent. Met haar
-              energieke en toegankelijke stijl weet ze kinderen en jongeren te
-              inspireren om het beste uit zichzelf te halen, zowel muzikaal als
-              persoonlijk.
+              Mimi Magusin is een ervaren koordirigent en muziekdocent…
             </p>
             <p className="text-lg text-gray-700">
-              Ze helpt haar leerlingen hun talenten te ontdekken en ontwikkelen,
-              met veel aandacht voor zelfstandigheid, samenwerking en
-              muzikaliteit.
+              Ze helpt haar leerlingen hun talenten te ontdekken…
             </p>
           </motion.div>
         </div>

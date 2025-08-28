@@ -104,7 +104,7 @@ export const courses: Course[] = [
     introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
     signUp: true,
     location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
-    dayAndTime: "Vrijdag, 15:30-16:25",
+    dayAndTime: "Vrijdag, 16:30-17:25",
     startDate: [new Date('September 3, 2025')],
     themes: ['zingen', 'koor', 'noten lezen'],
     signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",

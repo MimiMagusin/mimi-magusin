@@ -1,12 +1,10 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Hero, Slide } from "@/components/hero";
 
 import { courses } from "../courses/courses";
-import Card from "@/components/card";
-import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MapPinIcon } from "@heroicons/react/24/outline";
@@ -15,9 +13,6 @@ import {
   MusicalNoteIcon,
   PencilSquareIcon,
 } from "@heroicons/react/24/solid";
-import LearningGoalsSection from "@/components/choir-academy-learning-goals";
-import { yellowButton } from "@/components/styling-strings";
-import { Input, Textarea } from "@headlessui/react";
 import ChoirCarousel from "@/components/choir-carousel";
 import { Products } from "@/components/products";
 
@@ -71,7 +66,7 @@ export default function ChoirAcademy() {
       "Samen zingen, groeien en plezier maken. Ontdek je stem, zing in meerdere talen en schitter op het podium.",
     secondCTA: {
       label: "Meld je aan voor een proefles",
-      href: "#contact",
+      href: "mailto:info@mimimaguisin.com",
     },
   };
 

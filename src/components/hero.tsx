@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@heroui/button";
 import { blueButton, yellowButton } from "./styling-strings";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export type CTA = {
   label: string;
@@ -40,11 +41,12 @@ export function Hero({
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
+    if (slides.length === 0) return;
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   return (
     <section className="relative w-screen h-screen overflow-hidden bg-[#FFE607] -mt-8">
@@ -56,10 +58,14 @@ export function Hero({
               index === current ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
-            <img
-              src={slide.image}
+            <Image
+              src={
+                slide.image.startsWith("http") ? slide.image : `/${slide.image}`
+              }
               alt={slide.alt}
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
             />
           </div>
         ))}

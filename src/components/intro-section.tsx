@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { blueButton, yellowButton } from "./styling-strings";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function IntroBlok() {
   return (
@@ -17,9 +18,11 @@ export default function IntroBlok() {
     >
       {/* Foto */}
       <div className="relative">
-        <img
+        <Image
           src="/mm24-winterconcert-1.jpg"
           alt="Mimi Magusin"
+          width={1200}
+          height={1600}
           className="max-h-[80vh] rounded-[2rem] shadow-lg transform hover:scale-105 transition duration-500"
         />
       </div>

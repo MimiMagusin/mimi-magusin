@@ -8,9 +8,11 @@ export const AboutMe: React.FC<{ id: string }> = ({ id }) => {
         <AboutMeText id={id} />
       </div>
       <div className="w-full lg:w-1/2 h-full">
-        <img
+        <Image
           alt="Mimi Magusin"
           src="/mimi-magusin.jpg"
+          width={750}
+          height={750}
           className="w-full h-auto max-h-[750px] object-cover rounded-md"
         />
       </div>

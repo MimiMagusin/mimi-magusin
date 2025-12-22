@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "@heroui/button";
 import { Course, courses } from "../courses";
@@ -23,11 +24,13 @@ export default function CourseDetailPage() {
 
   return (
     <>
-      <div className="relative w-screen -ml-[50vw] -mr-[50vw] -mt-8">
-        <img
+      <div className="relative w-screen -ml-[50vw] -mr-[50vw] -mt-8 h-72 md:h-96">
+        <Image
           src={course.imageSrc}
           alt={course.imageAlt}
-          className="w-full h-72 md:h-96 object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
         />
       </div>
       <div className="max-w-4xl mx-auto px-4 py-8">

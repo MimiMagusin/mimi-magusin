@@ -3,24 +3,34 @@ import React from "react";
 import { Course } from "../app/courses/courses";
 import { blueButton, yellowButton } from "./styling-strings";
 import { motion } from "framer-motion";
-import { MapPinIcon } from "@heroicons/react/24/outline";
 
 const CourseCard: React.FC<Course> = ({
   name,
   targetAudience,
   price,
+  pricing,
   shortIntro,
   signUp,
   signUpLink,
   href,
 }) => {
+  const primaryPrice = pricing?.summary.primary ?? price;
+  const secondaryPrice = pricing?.summary.secondary;
+
   return (
     <div className="w-full h-full bg-white shadow-md rounded-xl p-6 flex flex-col justify-between gap-4 hover:shadow-lg transition">
       <div>
         <h3 className="text-2xl font-bold text-indigo-900 mb-1">{name}</h3>
         <p className="text-sm text-gray-500 mb-1">{targetAudience}</p>
 
-        <p className="text-lg font-bold text-yellow-500 mt-2">{price}</p>
+        <div className="mt-2">
+          <p className="text-lg font-bold text-yellow-500">{primaryPrice}</p>
+          {secondaryPrice && (
+            <p className="text-sm font-medium text-yellow-700">
+              {secondaryPrice}
+            </p>
+          )}
+        </div>
 
         <p className="text-gray-700 mt-4">{shortIntro}</p>
       </div>

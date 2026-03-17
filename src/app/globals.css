@@ -53,3 +53,16 @@ body {
 .slick-slider .slick-next {
   right: -56px;
 }
+
+.slick-track {
+  display: flex !important;
+  align-items: stretch;
+}
+
+.slick-slide {
+  height: auto;
+}
+
+.slick-slide > div {
+  height: 100%;
+}

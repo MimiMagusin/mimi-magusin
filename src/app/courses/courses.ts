@@ -1,5 +1,21 @@
 type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek' | 'games' | 'optreden' | 'instrumenten' | 'samenspel'
 
+export type CoursePricingBlock = {
+  label: string;
+  period: string;
+}
+
+export type CoursePricing = {
+  summary: {
+    primary: string;
+    secondary?: string;
+  };
+  schoolYearFee?: string;
+  installmentFee?: string;
+  blocks?: CoursePricingBlock[];
+  lateJoinPricePerLesson?: string;
+}
+
 export type Course = {
   introduction?: string;
   learningGoals?: string[];
@@ -16,7 +32,28 @@ export type Course = {
   targetAudience: string;
   href: string;
   price: string;
+  pricing?: CoursePricing;
   shortIntro?: string;
+}
+
+export const choirAcademySchoolYearPricing: CoursePricing = {
+  summary: {
+    primary: "€225 per schooljaar",
+    secondary: "of €135 per halfjaar",
+  },
+  schoolYearFee: "€225 per schooljaar",
+  installmentFee: "€135 per halfjaar",
+  blocks: [
+    {
+      label: "Blok 1",
+      period: "3 september t/m 18 februari",
+    },
+    {
+      label: "Blok 2",
+      period: "25 februari t/m 30 juni",
+    },
+  ],
+  lateJoinPricePerLesson: "€7,50 per resterende les",
 }
 
 export const courses: Course[] = [
@@ -40,10 +77,10 @@ export const courses: Course[] = [
   },
   {
     id: "choir-academy-speelklas",
-    name: "Speelklas",
+    name: "Speelklas (woensdag)",
     imageSrc: "/speelklas.png",
     imageAlt: "Flyer Speelklas",
-    targetAudience: "Groep 1/2",
+    targetAudience: "Vanaf (bijna) 4 jaar",
     href: "/courses/choir-academy-speelklas",
     price: "€75,- voor 10 lessen",
     learningGoals: ["Samen zingen", "Ritmegevoel", "Spelen op schoolinstrumenten", "Heel veel liedjes en spelletjes"],
@@ -59,11 +96,12 @@ export const courses: Course[] = [
   {
     id:"choir-academy-level-1-woensdag",
     name: "Startkoor (woensdag)",
-    imageSrc: "/schubert-2023.jpg",
+    imageSrc: "/sinterklaas-concert-2025.jpg",
     imageAlt: "Schubert concert in gelderlandfabriek",
-    targetAudience: "Groep 3 t/m 5",
+    targetAudience: "Vanaf 6 jaar",
     href: "/courses/choir-academy-level-1-woensdag",
-    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
+    price: choirAcademySchoolYearPricing.summary.primary,
+    pricing: choirAcademySchoolYearPricing,
     learningGoals: ["Hoe je je stem gezond gebruikt", "Samen zingen", "Ritmegevoel", "Notatie", "Heel veel liedjes en spelletjes",],
     introduction: "Met de leerlingen van de startklas werken we niet alleen aan onze stemmen, maar gaan we ook aan de slag met muzikale vorming. We oefenen met actief luisteren, muzikale vormen, de betekenis van allerlei soorten muziek en het muzikaal voorstellingvermogen. Spelenderwijs gaan we aan de slag met de basisbegrippen van de muziektheorie. Na deze cursus kan je verder met de Choir Academy van de Jong Talentklas of ben je perfect voorbereid om te beginnen met een instrument!",
     signUp: true,
@@ -79,9 +117,10 @@ export const courses: Course[] = [
     name: "Startkoor (vrijdag)",
     imageSrc: "/choir-academy-startklas.jpg",
     imageAlt: "Concert Buitengewoon Zingen",
-    targetAudience: "Groep 2 t/m 4",
+    targetAudience: "Vanaf 6 jaar",
     href: "/courses/choir-academy-level-1-vrijdag",
-    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
+    price: choirAcademySchoolYearPricing.summary.primary,
+    pricing: choirAcademySchoolYearPricing,
     learningGoals: ["Hoe je je stem gezond gebruikt", "Samen zingen", "Ritmegevoel", "Notatie", "Heel veel liedjes en spelletjes",],
     introduction: "Met de leerlingen van de startklas werken we niet alleen aan onze stemmen, maar gaan we ook aan de slag met muzikale vorming. We oefenen met actief luisteren, muzikale vormen, de betekenis van allerlei soorten muziek en het muzikaal voorstellingvermogen. Spelenderwijs gaan we aan de slag met de basisbegrippen van de muziektheorie. Na deze cursus kan je verder met de Choir Academy van de Jong Talentklas of ben je perfect voorbereid om te beginnen met een instrument!",
     signUp: true,
@@ -94,17 +133,37 @@ export const courses: Course[] = [
   },
   {
     id:"choir-academy-level-2",
-    name: "Tienerkoor",
+    name: "Tienerkoor (woensdag)",
     imageSrc: "/groepsfoto.jpg",
     imageAlt: "Concert Gelderlandfabriek 2023",
-    targetAudience: "Groep 6 t/m 8",
+    targetAudience: "Vanaf 9 jaar",
     href: "/courses/choir-academy-level-2",
-    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
+    price: choirAcademySchoolYearPricing.summary.primary,
+    pricing: choirAcademySchoolYearPricing,
     learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
     introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
     signUp: true,
     location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
-    dayAndTime: "Vrijdag, 16:30-17:25",
+    dayAndTime: "Woensdag, 16:30-17:25",
+    startDate: [new Date('September 3, 2025')],
+    themes: ['zingen', 'koor', 'noten lezen'],
+    signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
+    shortIntro: "Ontwikkel je stem en podiumpresentatie, leer noten lezen en zing in meerstemmige arrangementen."
+  },
+  {
+    id:"choir-academy-level-2",
+    name: "Tienerkoor (vrijdag)",
+    imageSrc: "/bolderburen.jpeg",
+    imageAlt: "Concert Gelderlandfabriek 2023",
+    targetAudience: "Vanaf 9 jaar",
+    href: "/courses/choir-academy-level-2",
+    price: choirAcademySchoolYearPricing.summary.primary,
+    pricing: choirAcademySchoolYearPricing,
+    learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
+    introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
+    signUp: true,
+    location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
+    dayAndTime: "Vrijdag, 16:00-17:00",
     startDate: [new Date('September 3, 2025')],
     themes: ['zingen', 'koor', 'noten lezen'],
     signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
@@ -112,17 +171,18 @@ export const courses: Course[] = [
   },
   {
     id:"choir-academy-level-3",
-    name: "VoxNext",
+    name: "VoxNext (woensdag)",
     imageSrc: "https://images.unsplash.com/photo-1669901529599-20a128702da8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageAlt: "VoxNext 2023",
-    targetAudience: "Vanaf 13 jaar",
+    targetAudience: "Vanaf 12 jaar",
     href: "/courses/choir-academy-level-3",
-    price: "€225 per schooljaar, of €135 voor blok 1 (3 september tot 18 februari)",
+    price: choirAcademySchoolYearPricing.summary.primary,
+    pricing: choirAcademySchoolYearPricing,
     learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],
     introduction: "In de lessen van de Choir Academy zingen we niet alleen, we werken ook aan je stem, muzikaliteit en podiumpresentatie. We gaan heel veel zingen en bewegen, maar gaan ook op speelse wijze aan de slag met allerlei muzikale begrippen en bladmuziek! We treden we ook regelmatig op, bijvoorbeeld op de uitmarkt en rondom kerst.",
     signUp: true,
     location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
-    dayAndTime: "woensdag, 19:00-20:30",
+    dayAndTime: "woensdag, 18:30-19:30",
     startDate: [new Date('September 3, 2025')],
     themes: ['zingen', 'koor', 'noten lezen'],
     signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",

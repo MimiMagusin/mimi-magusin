@@ -9,6 +9,7 @@ import { blueButton, yellowButton } from "@/components/styling-strings";
 import { Divider } from "@heroui/divider";
 import { ArrowRightIcon, MusicalNoteIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import { CoursePricingDetails } from "@/components/course-pricing";
 
 export default function CourseDetailPage() {
   const params = useParams<{ id: string }>();
@@ -21,6 +22,9 @@ export default function CourseDetailPage() {
   }, [params.id]);
 
   if (!course) return <p>Oeps er ging iets mis!</p>;
+
+  const primaryPrice = course.pricing?.summary.primary ?? course.price;
+  const secondaryPrice = course.pricing?.summary.secondary;
 
   return (
     <>
@@ -40,7 +44,12 @@ export default function CourseDetailPage() {
             <h1 className="text-3xl font-bold text-indigo-900">
               {course.name}
             </h1>
-            <p className="text-primary text-lg font-semibold">{course.price}</p>
+            <p className="text-primary text-lg font-semibold">{primaryPrice}</p>
+            {secondaryPrice && (
+              <p className="text-sm font-medium text-indigo-700">
+                {secondaryPrice}
+              </p>
+            )}
           </div>
           <div className="flex flex-col md:items-end gap-2">
             {course.signUp && course.signUpLink && (
@@ -100,6 +109,11 @@ export default function CourseDetailPage() {
                   <strong>Thema’s:</strong> {course.themes.join(", ")}
                 </p>
               </div>
+              {course.pricing && (
+                <div className="mt-6 border-t border-yellow-500/40 pt-6">
+                  <CoursePricingDetails pricing={course.pricing} />
+                </div>
+              )}
             </div>
             <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-4 place-center mt-4">
               <motion.a whileHover={{ scale: 1.05 }}>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Hero, Slide } from "@/components/hero";
 
-import { courses } from "../courses/courses";
+import { choirAcademySchoolYearPricing, courses } from "../courses/courses";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,6 +15,7 @@ import {
 } from "@heroicons/react/24/solid";
 import ChoirCarousel from "@/components/choir-carousel";
 import { Products } from "@/components/products";
+import { CoursePricingDetails } from "@/components/course-pricing";
 
 interface Program {
   title: string;
@@ -27,7 +28,7 @@ interface Program {
 
 export default function ChoirAcademy() {
   const choirAcademyCourses = courses.filter((course) =>
-    course.id.includes("choir-academy")
+    course.id.includes("choir-academy"),
   );
 
   const slides: Slide[] = [
@@ -85,27 +86,36 @@ export default function ChoirAcademy() {
       </section>
 
       <section className="bg-linear-to-b from-yellow-300 to-yellow-300/20 py-32 px-8">
-        <div className="container mx-auto my-8 p-8 bg-indigo-300 rounded-lg h-fit max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">Praktische informatie</h2>
-          <ul className="text-lg text-gray-800 space-y-4">
-            <li className="flex items-center gap-3">
-              <MapPinIcon className="h-5 w-5 text-gray-600" />
-              Locatie: Open Hof of Brede School West Culemborg.
-            </li>
-            <li className="flex items-center gap-3">
-              <CalendarDaysIcon className="h-5 w-5 text-gray-600" />
-              Lesdagen: Elke woensdag en vrijdag (tijdens schoolweken).
-            </li>
-            <li className="flex items-center gap-3">
-              <MusicalNoteIcon className="h-5 w-5 text-gray-600" />
-              Optredens: Minimaal 2 per jaar
-            </li>
-            <li className="flex items-center gap-3">
-              <PencilSquareIcon className="h-5 w-5 text-gray-600" />
-              Inschrijven kan het hele jaar door. Altijd twee gratis
-              proeflessen!
-            </li>
-          </ul>
+        <div className="container mx-auto my-8 grid max-w-5xl gap-8 lg:grid-cols-2">
+          <div className="rounded-lg bg-indigo-300 p-8">
+            <h2 className="text-3xl font-bold mb-6">Praktische informatie</h2>
+            <ul className="text-lg text-gray-800 space-y-4">
+              <li className="flex items-center gap-3">
+                <MapPinIcon className="h-5 w-5 text-gray-600" />
+                Locatie: Open Hof of Brede School West Culemborg.
+              </li>
+              <li className="flex items-center gap-3">
+                <CalendarDaysIcon className="h-5 w-5 text-gray-600" />
+                Lesdagen: Elke woensdag en vrijdag (tijdens schoolweken).
+              </li>
+              <li className="flex items-center gap-3">
+                <MusicalNoteIcon className="h-5 w-5 text-gray-600" />
+                Optredens: Minimaal 2 per jaar
+              </li>
+              <li className="flex items-center gap-3">
+                <PencilSquareIcon className="h-5 w-5 text-gray-600" />
+                Inschrijven kan het hele jaar door. Altijd twee gratis
+                proeflessen!
+              </li>
+            </ul>
+          </div>
+
+          <div className="rounded-lg bg-white/80 p-8 shadow-sm">
+            <CoursePricingDetails
+              pricing={choirAcademySchoolYearPricing}
+              title="Kosten voor jaarlijkse cursussen"
+            />
+          </div>
         </div>
       </section>
 

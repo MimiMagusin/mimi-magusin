@@ -5,6 +5,9 @@ import nl from "dayjs/locale/nl";
 import Link from "next/link";
 
 export const SignUpComponent: React.FC<{ course: Course }> = ({ course }) => {
+  const primaryPrice = course.pricing?.summary.primary ?? course.price;
+  const secondaryPrice = course.pricing?.summary.secondary;
+
   const formatDate = (date: Date, index: number) => {
     const maxIndex = course.startDate ? course.startDate.length - 1 : 0;
     const formattedDate = dayjs(date).locale(nl).format("dddd DD MMMM YYYY");
@@ -32,7 +35,11 @@ export const SignUpComponent: React.FC<{ course: Course }> = ({ course }) => {
             <b className="w-24">Locatie:</b> {course.location}
           </li>
           <li className="flex gap-x-3">
-            <b className="w-24">Prijs:</b> {course.price}
+            <b className="w-24">Prijs:</b>
+            <span>
+              {primaryPrice}
+              {secondaryPrice ? ` ${secondaryPrice}` : ""}
+            </span>
           </li>
         </ul>
         <p className="mt-16">

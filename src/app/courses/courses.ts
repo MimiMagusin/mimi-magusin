@@ -156,7 +156,7 @@ export const courses: Course[] = [
     imageSrc: "/bolderburen.jpeg",
     imageAlt: "Concert Gelderlandfabriek 2023",
     targetAudience: "Vanaf 9 jaar",
-    href: "/courses/choir-academy-level-2",
+    href: "/courses/choir-academy-level-2-vrijdag",
     price: choirAcademySchoolYearPricing.summary.primary,
     pricing: choirAcademySchoolYearPricing,
     learningGoals: ["Hoe je je stem gezond gebruikt", "Noten lezen", "Podiumpresentatie", "Canons/Meerstemmigheid"],

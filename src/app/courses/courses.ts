@@ -151,7 +151,7 @@ export const courses: Course[] = [
     shortIntro: "Ontwikkel je stem en podiumpresentatie, leer noten lezen en zing in meerstemmige arrangementen."
   },
   {
-    id:"choir-academy-level-2",
+    id:"choir-academy-level-2-vrijdag",
     name: "Tienerkoor (vrijdag)",
     imageSrc: "/bolderburen.jpeg",
     imageAlt: "Concert Gelderlandfabriek 2023",

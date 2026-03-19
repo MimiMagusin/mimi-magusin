@@ -10,7 +10,7 @@ export function ProviderWrapper({ children }: { children: React.ReactNode }) {
   return (
     <HeroUIProvider>
       <Header sections={sections} />
-      <main className="light flex min-h-screen flex-col items-center justify-between pt-8 px-8 w-full overflow-hidden">
+      <main className="light flex min-h-screen w-full flex-col items-center justify-between overflow-x-hidden pt-8">
         {children}
       </main>
       <Footer sections={sections} />

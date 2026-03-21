@@ -4,13 +4,13 @@ import { SectionHeading } from "@/app/scholen/shared";
 
 export function StrengthsSection() {
   return (
-    <section className="w-full bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-12">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+    <section className="flex min-h-[100svh] w-full items-center bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-12">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div>
           <SectionHeading
-            eyebrow="Waarom met Mimi"
+            eyebrow="Waarom Mimi"
             title="Vakdocent muziek én educatief partner"
-            intro="Mimi combineert muzikaliteit, didactiek en praktijkervaring. Daardoor ontstaat muziekonderwijs dat inspirerend is voor leerlingen en werkbaar blijft voor de school."
+            intro="Mimi combineert muzikaliteit, didactiek en praktijkervaring in het onderwijs. Daardoor ontstaat muziekonderwijs dat inspirerend is voor leerlingen en werkbaar blijft voor de school."
           />
         </div>
         <div className="grid gap-4">

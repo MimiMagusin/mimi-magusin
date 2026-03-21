@@ -28,8 +28,8 @@ const daypartMoments = [
 
 export function PremiumDaypartSection() {
   return (
-    <section className="w-full bg-linear-to-br from-indigo-950 via-indigo-900 to-indigo-800 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-12">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-start">
+    <section className="flex min-h-[100svh] w-full items-center bg-linear-to-br from-indigo-950 via-indigo-900 to-indigo-800 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-12">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-start">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">
             Muziek in de Klas uitgelicht
@@ -95,7 +95,7 @@ export function PremiumDaypartSection() {
           />
           <div className="mt-8">
             <Link href={contactLink} className={`${yellowButton} w-full sm:w-auto`}>
-              Vraag een kennismaking aan
+              Plan een kennismakingsgesprek
             </Link>
           </div>
         </div>

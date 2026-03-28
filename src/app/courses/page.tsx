@@ -3,8 +3,8 @@ import { courses } from "./courses";
 
 export default function Courses() {
   return( 
-    <div className="py-8">
-       <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl pt-8 text-center">
+    <div className="w-full px-4 pb-8 pt-28 sm:px-6">
+       <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl text-center">
         Leer mee!
       </h1>
       <p className="text-xl leading-8 text-gray-600 text-center pt-4">Iedereen kan groeien.</p>

@@ -3,6 +3,7 @@ import React from "react";
 import { Course } from "../app/courses/courses";
 import { blueButton, yellowButton } from "./styling-strings";
 import { motion } from "framer-motion";
+import { trialLessonRoute } from "@/app/navigation-vars";
 
 const CourseCard: React.FC<Course> = ({
   name,
@@ -11,7 +12,6 @@ const CourseCard: React.FC<Course> = ({
   pricing,
   shortIntro,
   signUp,
-  signUpLink,
   href,
 }) => {
   const primaryPrice = pricing?.summary.primary ?? price;
@@ -36,10 +36,10 @@ const CourseCard: React.FC<Course> = ({
       </div>
 
       <div className="flex gap-4 mt-6 flex-wrap justify-center xl:flex-nowrap">
-        {signUp && signUpLink && (
+        {signUp && (
           <motion.a
             whileHover={{ scale: 1.05 }}
-            href={signUpLink}
+            href={trialLessonRoute}
             className={yellowButton}
           >
             Plan een proefles

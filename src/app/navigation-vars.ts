@@ -1,6 +1,7 @@
 export const coursesId = "courses";
 export const aboutMeId = "about-me";
 export const choirAcademyRoute = "/choir-academy";
+export const trialLessonRoute = "/proefles";
 export const introId = "intro";
 export const coursesRoute = "/courses";
 export const schoolsRoute = "/scholen";

@@ -28,8 +28,8 @@ const daypartMoments = [
 
 export function PremiumDaypartSection() {
   return (
-    <section className="flex min-h-[100svh] w-full items-center bg-linear-to-br from-indigo-950 via-indigo-900 to-indigo-800 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-12">
-      <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-start">
+    <section className="w-full bg-linear-to-br from-indigo-950 via-indigo-900 to-indigo-800 px-4 py-14 text-white sm:px-6 sm:py-16 lg:px-12 lg:py-20">
+      <div className="mx-auto grid w-full max-w-6xl gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-start">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">
             Muziek in de Klas uitgelicht
@@ -47,7 +47,7 @@ export function PremiumDaypartSection() {
             overleg afgestemd. Juist daardoor sluit het traject aan bij de
             onderwijspraktijk, de jaarplanning en de ambitie van het team.
           </p>
-          <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/10 p-5 shadow-xl sm:p-6">
+          <div className="mt-8 rounded-[1.75rem] border border-white/10 bg-white/8 p-5 sm:p-6">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-yellow-300">
@@ -67,7 +67,7 @@ export function PremiumDaypartSection() {
               {daypartMoments.map((moment, index) => (
                 <div
                   key={moment.title}
-                  className="rounded-2xl border border-white/10 bg-indigo-950/55 p-5"
+                  className="rounded-2xl border border-white/10 bg-indigo-950/45 p-5"
                 >
                   <p className="text-sm font-semibold uppercase tracking-[0.16em] text-yellow-300">
                     Blok {index + 1}
@@ -83,7 +83,7 @@ export function PremiumDaypartSection() {
             </div>
           </div>
         </div>
-        <div className="rounded-[2rem] bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+        <div className="rounded-[2rem] border border-white/10 bg-white/10 p-6 sm:p-8">
           <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-yellow-300 px-4 py-2 text-sm font-bold text-indigo-950">
             <CalendarDaysIcon className="h-5 w-5" />
             €250 per dagdeel
@@ -93,7 +93,7 @@ export function PremiumDaypartSection() {
             textClassName="text-white/85"
             iconClassName="text-yellow-300"
           />
-          <div className="mt-8">
+          <div className="mt-7">
             <Link href={contactLink} className={`${yellowButton} w-full sm:w-auto`}>
               Plan een kennismakingsgesprek
             </Link>

@@ -7,7 +7,7 @@ export function OffersSection() {
   return (
     <section
       id={offersId}
-      className="flex min-h-[100svh] w-full items-center bg-linear-to-b from-yellow-300/70 to-white px-4 py-16 sm:px-6 sm:py-20 lg:px-12"
+      className="w-full bg-linear-to-b from-yellow-300/70 to-white px-4 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20"
     >
       <div className="mx-auto w-full max-w-6xl">
         <SectionHeading
@@ -16,11 +16,11 @@ export function OffersSection() {
           intro="Het verschil is direct duidelijk: Doe Mee is kort en laagdrempelig, Muziek in de Klas is structureel en gericht op duurzame opbouw."
         />
 
-        <div className="mt-12 grid gap-6 lg:mt-14 lg:grid-cols-2 lg:gap-8">
+        <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8">
         {offers.map((offer) => {
           const isDark = offer.theme === "dark";
           const articleClassName = isDark
-            ? "relative overflow-hidden rounded-[2rem] border border-indigo-200 bg-indigo-950 p-6 text-white shadow-xl sm:p-8"
+            ? "relative overflow-hidden rounded-[2rem] border border-indigo-200 bg-indigo-950 p-6 text-white shadow-lg sm:p-8"
             : "relative overflow-hidden rounded-[2rem] border border-indigo-100 bg-white p-6 shadow-sm sm:p-8";
           const eyebrowClassName = isDark
             ? "text-sm font-semibold uppercase tracking-[0.18em] text-yellow-300"
@@ -38,8 +38,8 @@ export function OffersSection() {
             ? "text-2xl font-bold text-yellow-300"
             : "text-2xl font-bold text-indigo-950";
           const noteClassName = isDark
-            ? "mt-8 rounded-2xl bg-white/10 p-5 text-sm leading-6 text-white/75"
-            : "mt-8 rounded-2xl bg-slate-50 p-5 text-sm leading-6 text-slate-600";
+            ? "mt-6 border-t border-white/10 pt-6 text-sm leading-6 text-white/75"
+            : "mt-6 border-t border-indigo-100 pt-6 text-sm leading-6 text-slate-600";
           const descriptionClassName = isDark
             ? "mt-4 text-base leading-7 text-white/85"
             : "mt-4 text-base leading-7 text-slate-700";
@@ -58,7 +58,7 @@ export function OffersSection() {
                 <div className={badgeClassName}>{offer.badge}</div>
               </div>
               {offer.priceLabel ? (
-                <div className={`mt-6 ${priceWrapperClassName}`}>
+                <div className={`mt-5 ${priceWrapperClassName}`}>
                   <p className={priceLabelClassName}>Investering</p>
                   <p className={priceValueClassName}>{offer.priceLabel}</p>
                 </div>
@@ -72,7 +72,7 @@ export function OffersSection() {
                 />
               </div>
               <p className={noteClassName}>{offer.note}</p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-7 flex flex-col gap-4 sm:flex-row">
                 {offer.ctas.map((cta) => (
                   <Link
                     key={cta.label}

@@ -4,8 +4,8 @@ import { contactLink, ctaContent, mailLink } from "@/app/scholen/content";
 
 export function CtaSection() {
   return (
-    <section className="flex min-h-[100svh] w-full items-center bg-linear-to-b from-yellow-300 to-yellow-200/60 px-4 py-16 sm:px-6 sm:py-20 lg:px-12">
-      <div className="mx-auto w-full max-w-4xl rounded-[2rem] bg-white/80 p-6 text-center shadow-sm backdrop-blur-sm sm:p-12">
+    <section className="w-full bg-linear-to-b from-yellow-300 to-yellow-200/60 px-4 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
+      <div className="mx-auto w-full max-w-4xl rounded-[2rem] bg-white/80 p-6 text-center shadow-sm backdrop-blur-sm sm:p-10">
         <h2 className="text-3xl font-bold tracking-tight text-indigo-950 sm:text-4xl">
           {ctaContent.title}
         </h2>

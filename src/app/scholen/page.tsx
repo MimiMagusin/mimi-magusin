@@ -13,7 +13,7 @@ export const metadata = schoolsMetadata;
 
 export default function SchoolsPage() {
   return (
-    <div className="-mt-8 w-full bg-white text-slate-900">
+    <div className="w-full bg-white text-slate-900">
       <HeroSection />
       <ProblemSection />
       <OffersSection />

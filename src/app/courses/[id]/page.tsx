@@ -10,6 +10,7 @@ import { Divider } from "@heroui/divider";
 import { ArrowRightIcon, MusicalNoteIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { CoursePricingDetails } from "@/components/course-pricing";
+import { trialLessonRoute } from "@/app/navigation-vars";
 
 export default function CourseDetailPage() {
   const params = useParams<{ id: string }>();
@@ -28,7 +29,7 @@ export default function CourseDetailPage() {
 
   return (
     <>
-      <div className="relative w-screen -ml-[50vw] -mr-[50vw] -mt-8 h-72 md:h-96">
+      <div className="relative w-screen -ml-[50vw] -mr-[50vw] h-72 md:h-96">
         <Image
           src={course.imageSrc}
           alt={course.imageAlt}
@@ -52,10 +53,12 @@ export default function CourseDetailPage() {
             )}
           </div>
           <div className="flex flex-col md:items-end gap-2">
-            {course.signUp && course.signUpLink && (
-              <Button size="lg" className={`${yellowButton}`}>
-                Plan een proefles
-              </Button>
+            {course.signUp && (
+              <motion.a whileHover={{ scale: 1.05 }} href={trialLessonRoute}>
+                <Button size="lg" className={yellowButton}>
+                  Plan een proefles
+                </Button>
+              </motion.a>
             )}
           </div>
         </div>
@@ -116,11 +119,8 @@ export default function CourseDetailPage() {
               )}
             </div>
             <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-4 place-center mt-4">
-              <motion.a whileHover={{ scale: 1.05 }}>
-                <Button
-                  className={yellowButton}
-                  href="https://forms.gle/ujGWSyBH1zWhLoir7"
-                >
+              <motion.a whileHover={{ scale: 1.05 }} href={trialLessonRoute}>
+                <Button className={yellowButton}>
                   Plan een proefles
                 </Button>
               </motion.a>

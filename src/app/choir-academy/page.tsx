@@ -16,6 +16,7 @@ import {
 import ChoirCarousel from "@/components/choir-carousel";
 import { Products } from "@/components/products";
 import { CoursePricingDetails } from "@/components/course-pricing";
+import { trialLessonRoute } from "../navigation-vars";
 
 interface Program {
   title: string;
@@ -67,7 +68,7 @@ export default function ChoirAcademy() {
       "Samen zingen, groeien en plezier maken. Ontdek je stem, zing in meerdere talen en schitter op het podium.",
     secondCTA: {
       label: "Meld je aan voor een proefles",
-      href: "mailto:info@mimimaguisin.com",
+      href: trialLessonRoute,
     },
   };
 

@@ -3,14 +3,14 @@ import { SectionHeading } from "@/app/scholen/shared";
 
 export function FaqSection() {
   return (
-    <section className="flex min-h-[100svh] w-full items-center bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-12">
+    <section className="w-full bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-12 lg:py-20">
       <div className="mx-auto w-full max-w-4xl">
         <SectionHeading
           eyebrow="FAQ"
           title="Veelgestelde vragen"
           intro="Korte antwoorden op vragen van schoolleiders, ICC'ers en leerkrachten."
         />
-        <div className="mt-14 space-y-4">
+        <div className="mt-10 space-y-4">
           {faqs.map((faq) => (
             <details
               key={faq.question}

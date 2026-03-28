@@ -1,7 +1,12 @@
 import { Hero, Slide } from "../components/hero";
 import { AboutMe } from "../components/about-me";
 import { courses } from "./courses/courses";
-import { aboutMeId, choirAcademyRoute, coursesId } from "./navigation-vars";
+import {
+  aboutMeId,
+  choirAcademyRoute,
+  coursesId,
+  trialLessonRoute,
+} from "./navigation-vars";
 import IntroSection from "@/components/intro-section";
 import { Products } from "@/components/products";
 
@@ -35,7 +40,7 @@ export default function Home() {
     },
     secondCTA: {
       label: "Plan een proefles",
-      href: "https://forms.gle/ujGWSyBH1zWhLoir7",
+      href: trialLessonRoute,
     },
     thirdCTA: {
       label: "Bekijk al het aanbod →",

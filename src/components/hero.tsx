@@ -49,7 +49,7 @@ export function Hero({
   }, [slides.length]);
 
   return (
-    <section className="relative w-screen h-screen overflow-hidden bg-[#FFE607] -mt-8">
+    <section className="relative w-screen h-screen overflow-hidden bg-[#FFE607]">
       <div className="relative h-full w-full">
         {slides.map((slide, index) => (
           <div

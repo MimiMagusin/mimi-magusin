@@ -154,7 +154,7 @@ export const courses: Course[] = [
         id: "choir-academy-zangmakers-vrijdag",
         aliases: ["choir-academy-level-1-vrijdag"],
         label: "Vrijdag",
-        dayAndTime: "Vrijdag, 15:30-16:25",
+        dayAndTime: "Vrijdag, 15:00-15:45",
         startDate: [new Date('September 5, 2025')],
         location: "Brede School West, Zijderupsvlinderlaan 8, 4105 TC Culemborg",
         signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
@@ -193,7 +193,7 @@ export const courses: Course[] = [
       {
         id: "choir-academy-zangcrew-woensdag",
         label: "Woensdag",
-        dayAndTime: "Woensdag, 16:30-17:25",
+        dayAndTime: "Woensdag, 15:30-17:25",
         startDate: [new Date('September 3, 2025')],
         location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
         signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",
@@ -233,10 +233,10 @@ export const courses: Course[] = [
     shortIntro: "Voor zangers die toe zijn aan extra uitdaging in presentatie, meerstemmigheid, ensemblezang en frequenter optreden.",
     sessions: [
       {
-        id: "choir-academy-stagecrew-vrijdag",
+        id: "choir-academy-stagecrew-woensdag",
         aliases: ["choir-academy-stagecrew"],
-        label: "Vrijdag",
-        dayAndTime: "Vrijdag, 16:00-17:00",
+        label: "Woensdag",
+        dayAndTime: "Woensdag, 17:00-18:00",
         startDate: [new Date('September 5, 2025')],
         location: "Open Hof, zaal 6, Beethovenlaan 2, Culemborg",
         signUpLink: "https://docs.google.com/forms/d/e/1FAIpQLSeTPwe1944dDA8TyBWpU_i_nUR7UyiZ6BekuHVNUYGoM6NfzQ/viewform?usp=header",

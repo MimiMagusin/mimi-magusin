@@ -7,6 +7,6 @@ describe("Courses page", () => {
 
     expect(screen.getByText("Leer mee!")).toBeInTheDocument();
     expect(screen.getByText("Iedereen kan groeien.")).toBeInTheDocument();
-    expect(screen.getByText("Zomerzangdagen")).toBeInTheDocument();
+    expect(screen.getByText("Zangmakers")).toBeInTheDocument();
   });
 });

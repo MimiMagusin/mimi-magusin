@@ -3,35 +3,25 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Hero, Slide } from "@/components/hero";
 
-import { choirAcademySchoolYearPricing, courses } from "../courses/courses";
+import {
+  choirAcademyCourses,
+  choirAcademyOverviewCourses,
+  choirAcademySchoolYearPricing,
+  getCourseSessions,
+} from "../courses/courses";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import {
-  CalendarDaysIcon,
+  CheckCircleIcon,
   MusicalNoteIcon,
   PencilSquareIcon,
 } from "@heroicons/react/24/solid";
-import ChoirCarousel from "@/components/choir-carousel";
+import ChoirLineSection from "@/components/choir-pathway";
 import { Products } from "@/components/products";
 import { CoursePricingDetails } from "@/components/course-pricing";
 import { trialLessonRoute } from "../navigation-vars";
 
-interface Program {
-  title: string;
-  ageRange: string;
-  day: string;
-  time: string;
-  price: string;
-  description: string;
-}
-
 export default function ChoirAcademy() {
-  const choirAcademyCourses = courses.filter((course) =>
-    course.id.includes("choir-academy"),
-  );
-
   const slides: Slide[] = [
     {
       id: 1,
@@ -41,7 +31,7 @@ export default function ChoirAcademy() {
     {
       id: 2,
       image: "25kk-bb-1.jpeg",
-      alt: "Tienerkoor zingt Matilda bij de Bolderburen",
+      alt: "Choir Academy zingt Matilda bij de Bolderburen",
     },
     {
       id: 3,
@@ -51,7 +41,7 @@ export default function ChoirAcademy() {
     {
       id: 4,
       image: "25kk-bb-2.jpeg",
-      alt: "Tienerkoor zingt Het lied van Djamaloka bij de Bolderburen",
+      alt: "Choir Academy zingt Het lied van Djamaloka bij de Bolderburen",
     },
     {
       id: 5,
@@ -61,13 +51,14 @@ export default function ChoirAcademy() {
   ];
 
   const heroProps = {
-    firstWord: "Zing.",
-    secondWord: "Ontdek.",
-    thirdWord: "Groei.",
+    eyebrow: "Zing. Speel. Groei.",
+    firstWord: "Choir",
+    secondWord: "Academy",
+    thirdWord: "",
     subtitle:
-      "Samen zingen, groeien en plezier maken. Ontdek je stem, zing in meerdere talen en schitter op het podium.",
+      "Bij de Choir Academy groeien kinderen en jongeren in zang en muzikaliteit. Van speels ontdekken tot zuiver en meerstemmig zingen, noten lezen en optreden met vertrouwen.",
     secondCTA: {
-      label: "Meld je aan voor een proefles",
+      label: "Plan een proefles",
       href: trialLessonRoute,
     },
   };
@@ -75,14 +66,14 @@ export default function ChoirAcademy() {
   return (
     <div className="bg-white">
       {/* HERO */}
-      <section className="relative h-[70vh] flex items-center justify-center">
+      <section className="relative h-screen flex items-center justify-center">
         <Hero slides={slides} {...heroProps} />
       </section>
 
       {/* PROGRAMMA */}
       <section className="mt-32 bg-linear-to-t from-indigo-900/70 to-transparent">
-        <div className="max-w-screen mx-auto px-4 overflow-hidden">
-          <ChoirCarousel />
+        <div className="max-w-screen mx-auto overflow-visible">
+          <ChoirLineSection />
         </div>
       </section>
 
@@ -92,16 +83,19 @@ export default function ChoirAcademy() {
             <h2 className="text-3xl font-bold mb-6">Praktische informatie</h2>
             <ul className="text-lg text-gray-800 space-y-4">
               <li className="flex items-center gap-3">
-                <MapPinIcon className="h-5 w-5 text-gray-600" />
-                Locatie: Open Hof of Brede School West Culemborg.
+                <CheckCircleIcon className="h-5 w-5 text-gray-600" />
+                1 repetitie per week, in een groep die past bij leeftijd en
+                niveau.
               </li>
               <li className="flex items-center gap-3">
-                <CalendarDaysIcon className="h-5 w-5 text-gray-600" />
-                Lesdagen: Elke woensdag en vrijdag (tijdens schoolweken).
+                <MapPinIcon className="h-5 w-5 text-gray-600" />
+                In het lesrooster hieronder zie je per koor welk lesmoment en
+                welke locatie je kunt kiezen.
               </li>
               <li className="flex items-center gap-3">
                 <MusicalNoteIcon className="h-5 w-5 text-gray-600" />
-                Optredens: Minimaal 2 per jaar
+                Optredens: Alle groepen treden op, met meer uitdaging en vaker
+                optreden in de oudere groepen.
               </li>
               <li className="flex items-center gap-3">
                 <PencilSquareIcon className="h-5 w-5 text-gray-600" />
@@ -120,8 +114,89 @@ export default function ChoirAcademy() {
         </div>
       </section>
 
+      <section className="bg-linear-to-b from-yellow-300/20 to-white py-24 px-6 sm:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-3xl">
+            <h2 className="text-4xl font-bold tracking-tight text-indigo-950">
+              Lesrooster
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-indigo-950/80">
+              Elk koor repeteert één keer per week. Per koor kies je het
+              lesmoment dat bij jullie past.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {choirAcademyCourses.map((course) => {
+              const sessions = getCourseSessions(course);
+
+              return (
+                <div
+                  key={course.id}
+                  className="rounded-lg border border-indigo-100 bg-white/85 p-6 shadow-sm"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-indigo-950">
+                        {course.name}
+                      </h3>
+                      <p className="mt-1 text-sm font-medium text-indigo-700/80">
+                        {course.targetAudience}
+                      </p>
+                      <p className="mt-3 text-sm text-slate-700">
+                        1 repetitie per week. Kies één lesmoment.
+                      </p>
+                    </div>
+                    <a
+                      href={course.href}
+                      className="shrink-0 text-sm font-semibold text-indigo-700 underline underline-offset-4"
+                    >
+                      Meer info
+                    </a>
+                  </div>
+
+                  <div className="mt-6 space-y-4">
+                    {sessions.map((session) => {
+                      return (
+                        <div
+                          key={session.id}
+                          className="rounded-lg bg-indigo-50/70 px-4 py-3"
+                        >
+                          <p className="font-semibold text-indigo-950">
+                            {session.label ? `${session.label}groep` : session.dayAndTime}
+                          </p>
+                          <p className="mt-1 text-sm font-medium text-indigo-800/85">
+                            {session.dayAndTime}
+                          </p>
+                          <p className="mt-1 text-sm text-slate-700">
+                            {session.location}
+                          </p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-linear-to-t from-yellow-300 to-yellow-300/20 py-32 px-8">
-        <Products products={choirAcademyCourses} withTitle />
+        <div className="mx-auto max-w-3xl pb-10 text-center">
+          <h2 className="text-4xl font-bold tracking-tight text-indigo-950">
+            Vier koren, één lijn
+          </h2>
+          <p className="pt-4 text-lg leading-8 text-indigo-950/85">
+            Van ontdekken naar verdiepen: in elke groep bouwen kinderen stap
+            voor stap aan muzikaliteit, zelfvertrouwen en podiumervaring.
+          </p>
+        </div>
+        <Products
+          products={choirAcademyOverviewCourses}
+          withTitle
+          title="Kies het koor dat past"
+        />
       </section>
 
       {/* OVER MIMI */}

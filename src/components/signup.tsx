@@ -1,19 +1,11 @@
-import { Course } from "@/app/courses/courses";
+import { Course, getCourseSessions } from "@/app/courses/courses";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import dayjs from "dayjs";
-import nl from "dayjs/locale/nl";
 import Link from "next/link";
 
 export const SignUpComponent: React.FC<{ course: Course }> = ({ course }) => {
   const primaryPrice = course.pricing?.summary.primary ?? course.price;
   const secondaryPrice = course.pricing?.summary.secondary;
-
-  const formatDate = (date: Date, index: number) => {
-    const maxIndex = course.startDate ? course.startDate.length - 1 : 0;
-    const formattedDate = dayjs(date).locale(nl).format("dddd DD MMMM YYYY");
-
-    return index === maxIndex ? formattedDate : `${formattedDate}, `;
-  };
+  const sessions = getCourseSessions(course);
 
   return (
     <>
@@ -23,17 +15,25 @@ export const SignUpComponent: React.FC<{ course: Course }> = ({ course }) => {
         </h2>
         <ul role="list" className="mt-8 pl-8 space-y-2 text-gray-600">
           <li className="flex gap-x-3">
-            <b className="w-24">Cursusdag:</b> {course.dayAndTime}
+            <b className="w-24">Frequentie:</b> 1 repetitie per week, kies één
+            lesmoment
           </li>
-          {course.startDate && course.startDate.length > 0 && (
-            <li className="flex gap-x-3">
-              <b className="w-24">Startdatum:</b>
-              {course.startDate?.map(formatDate) || ""}
-            </li>
-          )}
-          <li className="flex gap-x-3">
-            <b className="w-24">Locatie:</b> {course.location}
-          </li>
+          {sessions.map((session) => {
+            return (
+              <li key={session.id} className="space-y-1">
+                <div className="flex gap-x-3">
+                  <b className="w-24">Groep:</b>{" "}
+                  {session.label ? `${session.label}groep` : session.dayAndTime}
+                </div>
+                <div className="flex gap-x-3">
+                  <b className="w-24">Tijd:</b> {session.dayAndTime}
+                </div>
+                <div className="flex gap-x-3">
+                  <b className="w-24">Locatie:</b> {session.location}
+                </div>
+              </li>
+            );
+          })}
           <li className="flex gap-x-3">
             <b className="w-24">Prijs:</b>
             <span>
@@ -63,11 +63,11 @@ export const SignUpComponent: React.FC<{ course: Course }> = ({ course }) => {
             info@mimimagusin.com
           </Link>
           <span>voor meer informatie</span>{" "}
-          {course.signUpLink && (
+          {(course.signUpLink || sessions[0]?.signUpLink) && (
             <span>
               of ga direct naar{" "}
               <Link
-                href={course.signUpLink}
+                href={course.signUpLink ?? sessions[0].signUpLink!}
                 className="font-semibold leading-6 text-indigo-600 underline"
               >
                 aanmelden

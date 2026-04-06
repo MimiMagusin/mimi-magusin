@@ -5,12 +5,13 @@ import { Course } from "@/app/courses/courses";
 export const Products: React.FC<{
   products: Course[];
   withTitle?: boolean;
-}> = ({ products, withTitle = false }) => (
+  title?: string;
+}> = ({ products, withTitle = false, title = "Cursussen" }) => (
   <>
     <div className="mx-auto max-w-2xl lg:max-w-7xl ">
       {withTitle && (
         <h2 className="text-4xl font-bold tracking-tight text-indigo-950">
-          Cursussen
+          {title}
         </h2>
       )}
 

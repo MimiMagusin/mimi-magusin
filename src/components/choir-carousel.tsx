@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { courses } from "@/app/courses/courses";
+import { choirAcademyOverviewCourses } from "@/app/courses/courses";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
 import Card from "./card";
@@ -15,22 +15,6 @@ const baseSettings = {
   autoplaySpeed: 4000,
   swipeToSlide: true,
 };
-
-const zomerzangdagenInfo = courses.filter((c) => c.id === "zomerzangdagen")[0];
-
-const speelklasInfo = courses.filter(
-  (c) => c.id === "choir-academy-speelklas"
-)[0];
-
-const levelOneInfo = courses.filter(
-  (c) => c.id === "choir-academy-level-1-woensdag"
-)[0];
-
-const levelTwoInfo = courses.filter((c) => c.id === "choir-academy-level-2")[0];
-
-const levelThreeInfo = courses.filter(
-  (c) => c.id === "choir-academy-level-3"
-)[0];
 
 export default function ChoirCarousel() {
   const [slidesToShow, setSlidesToShow] = useState(1);
@@ -64,8 +48,18 @@ export default function ChoirCarousel() {
         viewport={{ once: true }}
         className="mb-4 text-center text-3xl font-bold text-indigo-950 sm:mb-6"
       >
-        Onze Koren
+        Onze koorlijn
       </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mx-auto mb-8 max-w-3xl text-center text-base leading-7 text-indigo-950/85 sm:text-lg"
+      >
+        Binnen de KEC Choir Academy groeien kinderen van ontdekken naar
+        verdiepen. Elke groep heeft een eigen plek, met optredens die passen bij
+        de leeftijd en het niveau.
+      </motion.p>
 
       <div className="mx-auto w-full px-2 pb-8 sm:px-6 sm:pb-10">
         <Slider
@@ -73,32 +67,11 @@ export default function ChoirCarousel() {
           slidesToShow={slidesToShow}
           arrows={slidesToShow > 1}
         >
-          <div className="h-full px-2 py-2 sm:px-3">
-            <Card
-              {...zomerzangdagenInfo}
-              signUpLink="https://forms.gle/ujGWSyBH1zWhLoir7"
-            />
-          </div>
-
-          <div className="h-full px-2 py-2 sm:px-3">
-            <Card {...speelklasInfo} />
-          </div>
-
-          <div className="h-full px-2 py-2 sm:px-3">
-            <Card
-              {...levelOneInfo}
-              name="Startkoor"
-              dayAndTime="woensdag of vrijdag, 15:30-16:25"
-            />
-          </div>
-
-          <div className="h-full px-2 py-2 sm:px-3">
-            <Card {...levelTwoInfo} />
-          </div>
-
-          <div className="h-full px-2 py-2 sm:px-3">
-            <Card {...levelThreeInfo} />
-          </div>
+          {choirAcademyOverviewCourses.map((course) => (
+            <div key={course.id} className="h-full px-2 py-2 sm:px-3">
+              <Card {...course} shortIntro={course.shortIntro} />{" "}
+            </div>
+          ))}
         </Slider>
       </div>
     </div>

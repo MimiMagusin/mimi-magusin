@@ -4,8 +4,8 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "@heroui/button";
-import { Course, courses } from "../courses";
-import { blueButton, yellowButton } from "@/components/styling-strings";
+import { Course, findCourseById, getCourseSessions } from "../courses";
+import { yellowButton } from "@/components/styling-strings";
 import { Divider } from "@heroui/divider";
 import { ArrowRightIcon, MusicalNoteIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
@@ -18,7 +18,7 @@ export default function CourseDetailPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const selectedCourse = courses.find((c) => c.id === params.id);
+    const selectedCourse = findCourseById(params.id);
     setCourse(selectedCourse);
   }, [params.id]);
 
@@ -26,6 +26,7 @@ export default function CourseDetailPage() {
 
   const primaryPrice = course.pricing?.summary.primary ?? course.price;
   const secondaryPrice = course.pricing?.summary.secondary;
+  const sessions = getCourseSessions(course);
 
   return (
     <>
@@ -103,14 +104,28 @@ export default function CourseDetailPage() {
                   <strong>Leeftijd:</strong> {course.targetAudience}
                 </p>
                 <p>
-                  <strong>Locatie:</strong> {course.location}
-                </p>
-                <p>
-                  <strong>Dag & tijd:</strong> {course.dayAndTime}
-                </p>
-                <p>
                   <strong>Thema’s:</strong> {course.themes.join(", ")}
                 </p>
+                {sessions.length > 0 && (
+                  <div className="mt-4">
+                    <strong>Je kiest één lesmoment:</strong>
+                    <ul className="mt-2 space-y-3">
+                      {sessions.map((session) => {
+                        return (
+                          <li key={session.id}>
+                            <div>
+                              {session.label ? `${session.label}groep` : session.dayAndTime}
+                            </div>
+                            <div className="text-sm text-indigo-950/80">
+                              {session.dayAndTime}
+                            </div>
+                            <div className="text-sm text-indigo-950/80">{session.location}</div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
               </div>
               {course.pricing && (
                 <div className="mt-6 border-t border-yellow-500/40 pt-6">
@@ -120,9 +135,7 @@ export default function CourseDetailPage() {
             </div>
             <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-4 place-center mt-4">
               <motion.a whileHover={{ scale: 1.05 }} href={trialLessonRoute}>
-                <Button className={yellowButton}>
-                  Plan een proefles
-                </Button>
+                <Button className={yellowButton}>Plan een proefles</Button>
               </motion.a>
 
               <motion.a

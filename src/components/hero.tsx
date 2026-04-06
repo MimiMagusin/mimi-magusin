@@ -22,7 +22,9 @@ type HeroProps = {
   firstWord: string;
   secondWord: string;
   thirdWord: string;
+  eyebrow?: string;
   subtitle: string;
+  supportingText?: string;
   firstCTA?: CTA;
   secondCTA?: CTA;
   thirdCTA?: CTA;
@@ -33,7 +35,9 @@ export function Hero({
   firstWord,
   secondWord,
   thirdWord,
+  eyebrow,
   subtitle,
+  supportingText,
   firstCTA,
   secondCTA,
   thirdCTA,
@@ -74,6 +78,16 @@ export function Hero({
         ;
         <div className="relative z-10 px-8 flex flex-col items-center justify-center h-full w-full text-center">
           <div className="max-width-3xl">
+            {eyebrow && (
+              <motion.p
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-yellow-300"
+              >
+                {eyebrow}
+              </motion.p>
+            )}
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,6 +105,16 @@ export function Hero({
             >
               {subtitle}
             </motion.p>
+            {supportingText && (
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.35 }}
+                className="mb-8 max-w-3xl mx-auto text-base text-white/80 sm:text-lg"
+              >
+                {supportingText}
+              </motion.p>
+            )}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {firstCTA && (
                 <motion.a

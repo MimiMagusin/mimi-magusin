@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo";
 
-export const schoolsMetadata: Metadata = {
-  title: "Muziekonderwijs voor basisscholen | Mimi Magusin",
+export const schoolsMetadata: Metadata = buildMetadata({
+  title: "Muziekonderwijs voor basisscholen",
   description:
     "Binnenschools muziekonderwijs en structurele begeleiding voor basisscholen in Culemborg en omgeving. Van korte projecten tot duurzaam muziekonderwijs op maat.",
-};
+  path: "/scholen",
+  keywords: [
+    "muziekonderwijs basisschool culemborg",
+    "muziekdocent school culemborg",
+    "muziekles basisschool culemborg",
+  ],
+});
 
 export const contactLink =
   "mailto:info@mimimagusin.com?subject=Kennismaking%20muziekonderwijs%20op%20school";

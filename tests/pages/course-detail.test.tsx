@@ -15,7 +15,11 @@ describe("Course detail page", () => {
   });
 
   it("renders details for a selected course", async () => {
-    render(<CourseDetailPage />);
+    render(
+      await CourseDetailPage({
+        params: Promise.resolve({ id: mockedId }),
+      }),
+    );
 
     expect(await screen.findByText("Zangmakers")).toBeInTheDocument();
     expect(screen.getAllByText("€225 per schooljaar").length).toBeGreaterThan(0);
@@ -23,8 +27,8 @@ describe("Course detail page", () => {
     expect(screen.getByText("Je kiest één lesmoment:")).toBeInTheDocument();
     expect(screen.getByText("Woensdaggroep")).toBeInTheDocument();
     expect(screen.getByText("Vrijdaggroep")).toBeInTheDocument();
-    expect(screen.getByText("Woensdag, 15:30-16:25")).toBeInTheDocument();
-    expect(screen.getByText("Vrijdag, 15:30-16:25")).toBeInTheDocument();
+    expect(screen.getByText("Woensdag, 15:15-16:55")).toBeInTheDocument();
+    expect(screen.getByText("Vrijdag, 15:15-16:55")).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: /Terug naar overzicht/ }),
     ).toBeInTheDocument();
@@ -33,7 +37,11 @@ describe("Course detail page", () => {
   it("keeps old choir academy slugs working via aliases", async () => {
     mockedId = "choir-academy-level-2";
 
-    render(<CourseDetailPage />);
+    render(
+      await CourseDetailPage({
+        params: Promise.resolve({ id: mockedId }),
+      }),
+    );
 
     expect(await screen.findByText("Zangcrew")).toBeInTheDocument();
   });

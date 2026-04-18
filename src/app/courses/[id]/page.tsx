@@ -1,28 +1,110 @@
-"use client";
-
-import { useParams, useRouter } from "next/navigation";
+import type { Metadata } from "next";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { notFound } from "next/navigation";
 import { Button } from "@heroui/button";
-import { Course, findCourseById, getCourseSessions } from "../courses";
-import { yellowButton } from "@/components/styling-strings";
 import { Divider } from "@heroui/divider";
 import { ArrowRightIcon, MusicalNoteIcon } from "@heroicons/react/24/solid";
-import { motion } from "framer-motion";
 import { CoursePricingDetails } from "@/components/course-pricing";
+import { StructuredData } from "@/components/structured-data";
+import { yellowButton } from "@/components/styling-strings";
+import { absoluteUrl, buildMetadata } from "@/lib/seo";
+import {
+  courses,
+  findCourseById,
+  getCourseSessions,
+  type Course,
+} from "../courses";
 import { trialLessonRoute } from "@/app/navigation-vars";
+import BackButton from "./back-button";
 
-export default function CourseDetailPage() {
-  const params = useParams<{ id: string }>();
-  const [course, setCourse] = useState<Course>();
-  const router = useRouter();
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
 
-  useEffect(() => {
-    const selectedCourse = findCourseById(params.id);
-    setCourse(selectedCourse);
-  }, [params.id]);
+function buildCourseDescription(course: Course) {
+  const sessions = getCourseSessions(course);
+  const locationSummary = sessions[0]?.location ?? "Culemborg";
 
-  if (!course) return <p>Oeps er ging iets mis!</p>;
+  return `${course.name} is muziekles in Culemborg voor ${course.targetAudience.toLowerCase()}. ${course.introduction} Locatie: ${locationSummary}.`;
+}
+
+function buildCourseKeywords(course: Course) {
+  return [
+    `${course.name.toLowerCase()} culemborg`,
+    "muziekles culemborg",
+    "muziekles kinderen culemborg",
+    "zingen culemborg",
+    "koor culemborg",
+    ...course.themes.map((theme) => `${theme} culemborg`),
+  ];
+}
+
+function buildCourseSchema(course: Course) {
+  const sessions = getCourseSessions(course);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: `${course.name} | Mimi Magusin`,
+    description: buildCourseDescription(course),
+    provider: {
+      "@type": "MusicSchool",
+      name: "Mimi Magusin",
+      url: absoluteUrl("/"),
+    },
+    url: absoluteUrl(course.href),
+    courseMode: "onsite",
+    educationalLevel: course.targetAudience,
+    about: course.themes,
+    hasCourseInstance: sessions.map((session) => ({
+      "@type": "CourseInstance",
+      courseMode: "onsite",
+      location: {
+        "@type": "Place",
+        name: session.location,
+        address: session.location,
+      },
+      startDate: session.startDate?.[0]?.toISOString(),
+    })),
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const course = findCourseById(id);
+
+  if (!course) {
+    return buildMetadata({
+      title: "Cursus niet gevonden",
+      description: "Deze cursus kon niet worden gevonden.",
+      path: `/courses/${id}`,
+    });
+  }
+
+  return buildMetadata({
+    title: `${course.name} in Culemborg`,
+    description: buildCourseDescription(course),
+    path: course.href,
+    keywords: buildCourseKeywords(course),
+    image: course.imageSrc.startsWith("http") ? "/mimi-magusin.jpg" : course.imageSrc,
+  });
+}
+
+export async function generateStaticParams() {
+  return courses.map((course) => ({
+    id: course.id,
+  }));
+}
+
+export default async function CourseDetailPage({ params }: PageProps) {
+  const { id } = await params;
+  const course = findCourseById(id);
+
+  if (!course) {
+    notFound();
+  }
 
   const primaryPrice = course.pricing?.summary.primary ?? course.price;
   const secondaryPrice = course.pricing?.summary.secondary;
@@ -30,6 +112,7 @@ export default function CourseDetailPage() {
 
   return (
     <>
+      <StructuredData data={buildCourseSchema(course)} />
       <div className="relative w-screen -ml-[50vw] -mr-[50vw] h-72 md:h-96">
         <Image
           src={course.imageSrc}
@@ -40,7 +123,6 @@ export default function CourseDetailPage() {
         />
       </div>
       <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Titel + prijs + knop */}
         <div className="mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold text-indigo-900">
@@ -55,27 +137,24 @@ export default function CourseDetailPage() {
           </div>
           <div className="flex flex-col md:items-end gap-2">
             {course.signUp && (
-              <motion.a whileHover={{ scale: 1.05 }} href={trialLessonRoute}>
+              <a href={trialLessonRoute}>
                 <Button size="lg" className={yellowButton}>
                   Plan een proefles
                 </Button>
-              </motion.a>
+              </a>
             )}
           </div>
         </div>
 
         <Divider className="my-12" />
 
-        {/* Introductie */}
         <p className="text-lg leading-relaxed">{course.introduction}</p>
 
         <Divider className="my-12" />
 
         <div className="flex flex-wrap justify-between gap-8">
-          {/* Leerdoelen */}
           {course.learningGoals && course.learningGoals.length > 0 && (
             <div className="basis-xs">
-              {" "}
               <h2 className="text-2xl font-semibold mb-3 text-indigo-950">
                 Wat ga je leren?
               </h2>
@@ -93,7 +172,6 @@ export default function CourseDetailPage() {
             </div>
           )}
 
-          {/* Praktische informatie */}
           <div className="basis-lg">
             <div className="bg-yellow-200 p-4 rounded-lg max-w-[80vw]">
               <div>
@@ -114,12 +192,16 @@ export default function CourseDetailPage() {
                         return (
                           <li key={session.id}>
                             <div>
-                              {session.label ? `${session.label}groep` : session.dayAndTime}
+                              {session.label
+                                ? `${session.label}groep`
+                                : session.dayAndTime}
                             </div>
                             <div className="text-sm text-indigo-950/80">
                               {session.dayAndTime}
                             </div>
-                            <div className="text-sm text-indigo-950/80">{session.location}</div>
+                            <div className="text-sm text-indigo-950/80">
+                              {session.location}
+                            </div>
                           </li>
                         );
                       })}
@@ -134,25 +216,21 @@ export default function CourseDetailPage() {
               )}
             </div>
             <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-4 place-center mt-4">
-              <motion.a whileHover={{ scale: 1.05 }} href={trialLessonRoute}>
+              <a href={trialLessonRoute}>
                 <Button className={yellowButton}>Plan een proefles</Button>
-              </motion.a>
+              </a>
 
-              <motion.a
-                whileHover={{ scale: 1.05 }}
+              <a
                 className="hover:text-gray-300 underline underline-offset-4 flex items-center gap-1"
                 href="mailto:info@mimimagusin.com"
               >
                 mail: info@mimimagusin.com
                 <ArrowRightIcon height="16" />
-              </motion.a>
+              </a>
             </div>
           </div>
         </div>
-        {/* Terugknop */}
-        <Button onPress={() => router.back()} className="my-12">
-          ← Terug naar overzicht
-        </Button>
+        <BackButton />
       </div>
     </>
   );

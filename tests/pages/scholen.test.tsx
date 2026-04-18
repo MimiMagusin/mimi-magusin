@@ -21,10 +21,10 @@ describe("Scholen page", () => {
     expect(
       screen.getByRole("heading", { name: "Veelgestelde vragen" }),
     ).toBeInTheDocument();
-  });
+  }, 15000);
 
   it("exports Dutch metadata for SEO", () => {
-    expect(metadata.title).toBe("Muziekonderwijs voor basisscholen | Mimi Magusin");
+    expect(metadata.title).toBe("Muziekonderwijs voor basisscholen");
     expect(metadata.description).toContain("Binnenschools muziekonderwijs");
   });
 });

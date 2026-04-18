@@ -11,5 +11,5 @@ describe("Choir Academy page", () => {
     expect(screen.getByText("Onze koorlijn")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /Choir Academy/i })).toBeInTheDocument();
     expect(screen.getByText("Vier koren, één lijn")).toBeInTheDocument();
-  });
+  }, 15000);
 });

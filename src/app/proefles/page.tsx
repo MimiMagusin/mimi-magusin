@@ -6,16 +6,23 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import { TallyFormEmbed } from "@/components/tally-form-embed";
+import { buildMetadata } from "@/lib/seo";
 import { coursesRoute } from "../navigation-vars";
 
 const tallySrc =
   "https://tally.so/embed/9qOYGK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
 
-export const metadata: Metadata = {
-  title: "Plan een proefles | Mimi Magusin",
+export const metadata: Metadata = buildMetadata({
+  title: "Plan een proefles",
   description:
-    "Plan eenvoudig een proefles voor een van de cursussen van Mimi Magusin.",
-};
+    "Plan eenvoudig een proefles voor muziekles, koor of Choir Academy van Mimi Magusin in Culemborg.",
+  path: "/proefles",
+  keywords: [
+    "proefles muziek culemborg",
+    "proefles koor culemborg",
+    "muziekles culemborg",
+  ],
+});
 
 const reassurancePoints = [
   "Laagdrempelig kennismaken met de les en de sfeer",

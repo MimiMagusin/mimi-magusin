@@ -75,7 +75,6 @@ export function Hero({
         ))}
         {/* Donkerblauwe overlay voor leesbaarheid */}
         <div className="absolute inset-0 bg-radial from-indigo-950 to-indigo-950/40 z-10 mix-blend-multiply" />
-        ;
         <div className="relative z-10 px-8 flex flex-col items-center justify-center h-full w-full text-center">
           <div className="max-width-3xl">
             {eyebrow && (

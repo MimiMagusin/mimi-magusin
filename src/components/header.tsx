@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Dialog } from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, HomeIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -38,15 +38,17 @@ export const Header: React.FC<HeaderProps> = ({ sections }) => {
             type="button"
             className="w-16 flex justify-center rounded-md bg-indigo-600 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             onClick={() => setMobileMenuOpen(true)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label="Open main menu"
           >
-            <span className="sr-only">Open main menu</span>
             <Bars3Icon className="h-8 w-8" aria-hidden="true" />
           </button>
         </div>
       </nav>
-      <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <DialogPanel id="mobile-menu" className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <button
             type="button"
             className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -66,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ sections }) => {
               </Link>
             </div>
           ))}
-        </Dialog.Panel>
+        </DialogPanel>
       </Dialog>
     </header>
   );

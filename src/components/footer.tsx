@@ -28,20 +28,20 @@ export const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => (
       <h2 className="text-xl text-gray-300 font-bold">Socials</h2>
       <ul className="pt-2">
         <li>
-          <Link
-            href={`#`}
-            className="leading-8 text-gray-300 underline underline-offset-8"
+          <span
+            className="leading-8 text-gray-500 cursor-not-allowed"
+            aria-label="LinkedIn (binnenkort beschikbaar)"
           >
             LinkedIn
-          </Link>
+          </span>
         </li>
         <li>
-          <Link
-            href={`#`}
-            className="leading-8 text-gray-300 underline underline-offset-8"
+          <span
+            className="leading-8 text-gray-500 cursor-not-allowed"
+            aria-label="YouTube (binnenkort beschikbaar)"
           >
             YouTube
-          </Link>
+          </span>
         </li>
       </ul>
     </div>

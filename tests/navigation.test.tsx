@@ -5,18 +5,14 @@ import { Footer } from "@/components/footer";
 import { schoolsRoute, sections } from "@/app/navigation-vars";
 
 vi.mock("@headlessui/react", () => ({
-  Dialog: Object.assign(
-    ({
-      open,
-      children,
-    }: {
-      open: boolean;
-      children: ReactNode;
-    }) => (open ? <div role="dialog">{children}</div> : null),
-    {
-      Panel: ({ children }: { children: ReactNode }) => <div>{children}</div>,
-    },
-  ),
+  Dialog: ({
+    open,
+    children,
+  }: {
+    open: boolean;
+    children: ReactNode;
+  }) => (open ? <div role="dialog">{children}</div> : null),
+  DialogPanel: ({ children }: { children: ReactNode }) => <div>{children}</div>,
 }));
 
 vi.mock("next/navigation", () => ({

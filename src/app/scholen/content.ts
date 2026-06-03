@@ -18,6 +18,7 @@ export const contactLink =
 
 export const mailLink = "mailto:info@mimimagusin.com";
 export const offersId = "aanbod";
+export const projectsId = "projecten";
 
 export const heroContent = {
   eyebrow: "Voor basisscholen",
@@ -52,48 +53,41 @@ export const problemSection = {
 
 export const offers = [
   {
-    title: "Binnenschools aanbod via Doe Mee in Culemborg",
-    badge: "Laagdrempelig",
-    eyebrow: "Korte kennismaking",
+    title: "Korte projecten",
+    badge: "Gesubsidieerd",
+    eyebrow: "Via Doe mee in Culemborg",
     description:
-      "Een korte en speelse kennismaking op school. In 2 tot 4 lessen maken leerlingen kennis met zingen, ritme, samenspel en presentatie.",
+      "Twee tot vier lessen per klas, direct inzetbaar tijdens schooltijd. Kies een project rond Sinterklaas, Koningsdag, de Kindermuziekweek of Maestro.",
     bullets: [
-      "2 tot 4 lessen per groep",
-      "Op school, onder schooltijd",
-      "Koppelbaar aan thema's of evenementen",
-      "Zichtbaar resultaat in korte tijd",
-      "Goede opstap naar naschools aanbod",
+      "In principe 100% gesubsidieerd",
+      "2–4 lessen per klas van 30–45 minuten",
+      "Geen extra werk voor de leerkrachten",
+      "Optioneel: doorstroom naar optredens in de stad",
     ],
-    note: "Doe Mee is bedoeld als laagdrempelige kennismaking: kort, praktisch en direct inzetbaar binnen schooltijd.",
-    ctas: [{ label: "Interesse via Doe Mee", href: contactLink, variant: "secondary" as const }],
+    note: "Beperkt aantal plekken per schooljaar. Bekijk de projecten hieronder.",
+    ctas: [{ label: "Bekijk de projecten", href: `#${projectsId}`, variant: "secondary" as const }],
     theme: "light" as const,
   },
   {
     title: "Muziek in de Klas",
-    badge: "Premium",
+    badge: "Op maat",
     eyebrow: "Structurele samenwerking",
     price: "EUR250 per dagdeel",
     priceLabel: "€250 per dagdeel",
     description:
-      "Een structureel traject voor scholen die muziek duurzaam willen opbouwen. Wekelijkse lessen, coaching en afstemming in een samenwerking.",
+      "Wekelijkse lessen, coaching en afstemming op jullie schoolcultuur en -thema's. Muziek als vaste, zichtbare plek in de school.",
     bullets: [
-      "Wekelijkse muzieklessen",
-      "Co-creatie met leerkrachten",
-      "Aansluiting op thema's en identiteit",
+      "Wekelijkse lessen per groep",
+      "Koppeling aan thema's, vieringen of musical",
       "Coaching van leerkrachten",
-      "Ondersteuning bij presentaties, vieringen of musical",
+      "Deels te financieren via CMK",
     ],
-    note: "Voor scholen die muziek een vaste, zichtbare plek willen geven in lessen, projecten en schoolmomenten.",
+    note: "Voor scholen die muziek structureel willen opbouwen — stap voor stap, passend bij het team.",
     ctas: [
       {
         label: "Plan een kennismakingsgesprek",
         href: contactLink,
         variant: "primary" as const,
-      },
-      {
-        label: "Bespreek Muziek in de Klas",
-        href: contactLink,
-        variant: "secondary" as const,
       },
     ],
     theme: "dark" as const,
@@ -163,12 +157,7 @@ export const faqs = [
   {
     question: "Is het aanbod alleen voor scholen in Culemborg?",
     answer:
-      "De focus ligt op basisscholen in Culemborg en omgeving. Werk je buiten Culemborg, dan kun je altijd mailen om te bespreken wat praktisch mogelijk is.",
-  },
-  {
-    question: "Kan het aanbod aansluiten bij ons schoolthema?",
-    answer:
-      "Ja. Vooral binnen Muziek in de Klas kunnen lessen gekoppeld worden aan thema's, jaarfeesten, projecten en cultuuronderwijs.",
+      "De focus ligt op basisscholen in Culemborg en omgeving. Buiten Culemborg? Stuur een mail — dan kijken we wat praktisch mogelijk is.",
   },
   {
     question: "Is Muziek in de Klas ook geschikt als we nog weinig met muziek doen?",
@@ -178,22 +167,55 @@ export const faqs = [
   {
     question: "Kunnen jullie ook toewerken naar een musical of viering?",
     answer:
-      "Ja. Mimi kan meedenken over repertoire, repetities, presentatie en de muzikale voorbereiding van vieringen, seizoensmomenten of een musical.",
-  },
-  {
-    question: "Is het aanbod geschikt als niet elke klas graag zingt?",
-    answer:
-      "Ja. Zingen is een belangrijke basis, maar de lessen bevatten ook ritme, bewegen, spel en samenspel. Zo sluiten ze aan bij verschillende talenten en leerstijlen.",
-  },
-  {
-    question: "Geeft Mimi alleen les, of ook coaching aan leerkrachten?",
-    answer:
-      "Beide. Naast het lesgeven kan Mimi leerkrachten coachen en ondersteunen bij het vormgeven van eigen muziekonderwijs.",
+      "Ja. Mimi denkt mee over repertoire, repetities en de muzikale voorbereiding van vieringen, seizoensmomenten of een musical.",
   },
   {
     question: "Hoe plan je een kennismaking?",
     answer:
       "Via de contactknoppen op deze pagina. Een korte mail is genoeg om een eerste gesprek in te plannen.",
+  },
+];
+
+export const shortProjects = [
+  {
+    title: "Maestro",
+    when: "September – Oktober",
+    targetGroup: "Groep 1 t/m 8",
+    image: "/kca-groepsfoto-2.jpg",
+    lessonsLabel: "Reeks – 3 lessen per klas",
+    description:
+      "Leerlingen ontdekken hoe een orkest werkt van binnenuit. Ze leren dirigeren, spelen samen ritmes en bouwen stap voor stap een eigen klassenorkest.",
+    href: "https://www.doemeeinculemborg.nl/activiteit/623214/maestro-in-de-klas",
+  },
+  {
+    title: "Sinterklaas!",
+    when: "Oktober – November",
+    targetGroup: "Groep 1 t/m 5",
+    image: "/sinterklaas-concert-2025.jpg",
+    lessonsLabel: "Reeks – 3 lessen per klas",
+    description:
+      "Zingen met herkenbare Sinterklaasliedjes en nieuwe variaties. Focus op samenklang en zelfvertrouwen — ook bij groepen die zingen spannend vinden.",
+    href: "https://www.doemeeinculemborg.nl/activiteit/623218/sinterklaas",
+  },
+  {
+    title: "Kindermuziekweek",
+    when: "Februari – Maart",
+    targetGroup: "Groep 3 t/m 8",
+    image: "/mm24-winterconcert-1.jpg",
+    lessonsLabel: "Reeks – 4 lessen per klas",
+    description:
+      "Kennismaken met het symfonieorkest en hoe muziek is opgebouwd. Toewerken naar repertoire van de Culemborgse Schoolorkesten.",
+    href: "https://www.doemeeinculemborg.nl/activiteit/623304/kindermuziekweek",
+  },
+  {
+    title: "Koningsdag",
+    when: "Maart – April",
+    targetGroup: "Groep 1 t/m 6",
+    image: "/kk24-kerstconcert.jpg",
+    lessonsLabel: "Reeks – 2 lessen per klas",
+    description:
+      "Energiek project met zang, beweging en ritme. Jongere groepen zingen en bewegen; oudere leerlingen werken aan een schoolrap of ritmische presentatie.",
+    href: "https://www.doemeeinculemborg.nl/activiteit/623307/klaar-voor-koningsdag",
   },
 ];
 

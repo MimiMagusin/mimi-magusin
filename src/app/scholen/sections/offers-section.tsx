@@ -11,9 +11,9 @@ export function OffersSection() {
     >
       <div className="mx-auto w-full max-w-6xl">
         <SectionHeading
-          eyebrow="Aanbod"
-          title="Kies de vorm die past bij jullie school"
-          intro="Het verschil is direct duidelijk: Doe Mee is kort en laagdrempelig, Muziek in de Klas is structureel en gericht op duurzame opbouw."
+          eyebrow="Twee keuzes"
+          title="Kort project of structurele muziekles?"
+          intro="Doe mee met een gesubsidieerd themaproject, of kies voor een duurzame samenwerking met wekelijkse lessen en coaching."
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:gap-8">

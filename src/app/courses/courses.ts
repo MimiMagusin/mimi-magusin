@@ -65,7 +65,7 @@ export const choirAcademySchoolYearPricing: CoursePricing = {
   yearlyTotal: "€400 (40 lessen: 38 schoolweken, een koormiddag in de herfstvakantie en het eindconcert)",
   paymentPlan: "Automatische incasso in 10 gelijke termijnen van €40",
   includes: "Al het lesmateriaal en 6 tot 12 optredens per jaar, afhankelijk van de groep",
-  siblingDiscount: "Tweede kind en elk kind daarna €360 per jaar (€36 per termijn) — 10% korting.",
+  siblingDiscount: "Tweede kind en elk kind daarna €360 per jaar (€36 per termijn), oftewel 10% korting.",
   financialSupport: "We werken samen met Jeugdfonds Sport & Cultuur voor financiële ondersteuning.",
   trial: "De eerste twee lessen zijn vrijblijvend. Ga je door, dan zijn het je eerste twee lessen van het jaar. Zo niet, dan kost het je niets.",
 }

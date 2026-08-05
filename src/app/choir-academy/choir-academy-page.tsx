@@ -81,29 +81,29 @@ export default function ChoirAcademy() {
           <div className="rounded-lg bg-indigo-300 p-8">
             <h2 className="text-3xl font-bold mb-6">Praktische informatie</h2>
             <ul className="text-lg text-gray-800 space-y-4">
-              <li className="flex items-center gap-3">
-                <CheckCircleIcon className="h-5 w-5 text-gray-600" />
+              <li className="flex items-start gap-3">
+                <CheckCircleIcon className="mt-0.5 h-6 w-6 shrink-0 text-gray-600" />
                 1 repetitie per week, in een groep die past bij leeftijd en
                 niveau.
               </li>
-              <li className="flex items-center gap-3">
-                <UserGroupIcon className="h-5 w-5 text-gray-600" />
-                Kleine groepen — we houden de koren bewust klein, zodat er
-                naast het samen zingen ruimte is voor persoonlijke aandacht en
-                groei.
+              <li className="flex items-start gap-3">
+                <UserGroupIcon className="mt-0.5 h-6 w-6 shrink-0 text-gray-600" />
+                Groepsgrootte op maat: de jongste koren klein voor veel
+                persoonlijke aandacht, de gevorderde koren wat groter voor
+                meerstemmig repertoire.
               </li>
-              <li className="flex items-center gap-3">
-                <MapPinIcon className="h-5 w-5 text-gray-600" />
+              <li className="flex items-start gap-3">
+                <MapPinIcon className="mt-0.5 h-6 w-6 shrink-0 text-gray-600" />
                 In het lesrooster hieronder zie je per koor welk lesmoment en
                 welke locatie je kunt kiezen.
               </li>
-              <li className="flex items-center gap-3">
-                <MusicalNoteIcon className="h-5 w-5 text-gray-600" />
+              <li className="flex items-start gap-3">
+                <MusicalNoteIcon className="mt-0.5 h-6 w-6 shrink-0 text-gray-600" />
                 Optredens: Alle groepen treden op, met meer uitdaging en vaker
                 optreden in de oudere groepen.
               </li>
-              <li className="flex items-center gap-3">
-                <PencilSquareIcon className="h-5 w-5 text-gray-600" />
+              <li className="flex items-start gap-3">
+                <PencilSquareIcon className="mt-0.5 h-6 w-6 shrink-0 text-gray-600" />
                 Inschrijven kan het hele jaar door. Altijd twee vrijblijvende
                 proeflessen!
               </li>

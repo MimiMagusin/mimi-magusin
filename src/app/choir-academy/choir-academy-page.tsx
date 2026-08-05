@@ -11,7 +11,7 @@ import {
   getCourseSessions,
 } from "../courses/courses";
 
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import { MapPinIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 import {
   CheckCircleIcon,
   MusicalNoteIcon,
@@ -87,6 +87,12 @@ export default function ChoirAcademy() {
                 niveau.
               </li>
               <li className="flex items-center gap-3">
+                <UserGroupIcon className="h-5 w-5 text-gray-600" />
+                Kleine groepen — we houden de koren bewust klein, zodat er
+                naast het samen zingen ruimte is voor persoonlijke aandacht en
+                groei.
+              </li>
+              <li className="flex items-center gap-3">
                 <MapPinIcon className="h-5 w-5 text-gray-600" />
                 In het lesrooster hieronder zie je per koor welk lesmoment en
                 welke locatie je kunt kiezen.
@@ -107,7 +113,7 @@ export default function ChoirAcademy() {
           <div className="rounded-lg bg-white/80 p-8 shadow-sm">
             <CoursePricingDetails
               pricing={choirAcademySchoolYearPricing}
-              title="Kosten voor jaarlijkse cursussen"
+              title="Kosten per schooljaar"
             />
           </div>
         </div>

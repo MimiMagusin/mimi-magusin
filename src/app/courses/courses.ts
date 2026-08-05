@@ -1,19 +1,17 @@
 type Theme = "amv" | 'koor' | 'digitale vaardigheden' | 'korte cursus' | 'zingen' | 'noten lezen' | 'muziek' | 'games' | 'optreden' | 'instrumenten' | 'samenspel'
 
-export type CoursePricingBlock = {
-  label: string;
-  period: string;
-}
-
 export type CoursePricing = {
   summary: {
     primary: string;
     secondary?: string;
   };
-  schoolYearFee?: string;
-  installmentFee?: string;
-  blocks?: CoursePricingBlock[];
-  lateJoinPricePerLesson?: string;
+  perLesson: string;
+  yearlyTotal: string;
+  paymentPlan: string;
+  includes: string;
+  siblingDiscount: string;
+  financialSupport: string;
+  trial: string;
 }
 
 export type CourseSession = {
@@ -59,22 +57,16 @@ export type Course = {
 
 export const choirAcademySchoolYearPricing: CoursePricing = {
   summary: {
-    primary: "€225 per schooljaar",
-    secondary: "of €135 per halfjaar",
+    primary: "€400 per jaar",
+    secondary: "(€10 per les, 40 lessen)",
   },
-  schoolYearFee: "€225 per schooljaar",
-  installmentFee: "€135 per halfjaar",
-  blocks: [
-    {
-      label: "Blok 1",
-      period: "3 september t/m 18 februari",
-    },
-    {
-      label: "Blok 2",
-      period: "25 februari t/m 30 juni",
-    },
-  ],
-  lateJoinPricePerLesson: "€7,50 per resterende les",
+  perLesson: "€10",
+  yearlyTotal: "€400 (40 lessen: 38 schoolweken, een koormiddag in de herfstvakantie en het eindconcert)",
+  paymentPlan: "Automatische incasso in 10 gelijke termijnen van €40",
+  includes: "Al het lesmateriaal en 6 tot 12 optredens per jaar, afhankelijk van de groep",
+  siblingDiscount: "Tweede kind en elk kind daarna €360 per jaar (€36 per termijn) — 10% korting.",
+  financialSupport: "We werken samen met Jeugdfonds Sport & Cultuur voor financiële ondersteuning.",
+  trial: "De eerste twee lessen zijn gratis. Je betaalt pas als je besluit mee te doen.",
 }
 
 const zangMakersIntro = "Zangmakers is de warme en speelse start van onze koorlijn. Kinderen zingen, spelen, bewegen en ontdekken muziek stap voor stap. We werken aan plezier, luisteren, samenzang en een eerste muzikale basis. Ook maken we spelenderwijs kennis met het notenschrift. Deze groep treedt af en toe op: laagdrempelig, feestelijk en een eerste ervaring op het podium."

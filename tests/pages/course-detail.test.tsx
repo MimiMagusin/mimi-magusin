@@ -22,7 +22,7 @@ describe("Course detail page", () => {
     );
 
     expect(await screen.findByText("Zangmakers")).toBeInTheDocument();
-    expect(screen.getAllByText("€225 per schooljaar").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("€400 per jaar").length).toBeGreaterThan(0);
     expect(screen.getByText("Praktische informatie")).toBeInTheDocument();
     expect(screen.getByText("Je kiest één lesmoment:")).toBeInTheDocument();
     expect(screen.getByText("Woensdaggroep")).toBeInTheDocument();

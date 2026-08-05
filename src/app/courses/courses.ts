@@ -67,7 +67,7 @@ export const choirAcademySchoolYearPricing: CoursePricing = {
   includes: "Al het lesmateriaal en 6 tot 12 optredens per jaar, afhankelijk van de groep",
   siblingDiscount: "Tweede kind en elk kind daarna €360 per jaar (€36 per termijn) — 10% korting.",
   financialSupport: "We werken samen met Jeugdfonds Sport & Cultuur voor financiële ondersteuning.",
-  trial: "De eerste twee lessen zijn vrijblijvend. Je betaalt pas als je besluit mee te doen.",
+  trial: "De eerste twee lessen zijn vrijblijvend. Ga je door, dan zijn het je eerste twee lessen van het jaar. Zo niet, dan kost het je niets.",
 }
 
 const zangMakersIntro = "Zangmakers is de warme en speelse start van onze koorlijn. Kinderen zingen, spelen, bewegen en ontdekken muziek stap voor stap. We werken aan plezier, luisteren, samenzang en een eerste muzikale basis. Ook maken we spelenderwijs kennis met het notenschrift. Deze groep treedt af en toe op: laagdrempelig, feestelijk en een eerste ervaring op het podium."

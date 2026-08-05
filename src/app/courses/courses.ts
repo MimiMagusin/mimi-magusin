@@ -170,7 +170,7 @@ export const courses: Course[] = [
       chapter: "Groeien",
       intro: "Voor kinderen die verder willen groeien in zingen.",
       focus:
-        "We werken aan stemgebruik, samenzang, muzikaliteit en zelfvertrouwen op het podium.",
+        "We werken aan stemgebruik, eerste meerstemmigheid, muziekleer (noten), muzikaliteit en zelfvertrouwen op het podium.",
       tone: "bg-indigo-50/90",
       offset: "lg:mt-16",
     },
@@ -205,7 +205,7 @@ export const courses: Course[] = [
       chapter: "Verdiepen",
       intro: "Voor zangers die toe zijn aan extra uitdaging.",
       focus:
-        "We werken aan presentatie, meerstemmigheid, ensembleklank en een sterkere podiumperformance.",
+        "We werken aan presentatie, solfege (notenleer), meerstemmigheid, ensembleklank en een sterkere podiumperformance.",
       tone: "bg-white/85",
       offset: "lg:mt-4",
     },
@@ -240,7 +240,7 @@ export const courses: Course[] = [
       chapter: "Verfijnen",
       intro: "Voor tieners die met meer diepgang willen zingen en performen.",
       focus:
-        "We werken aan muzikaliteit, expressie, zelfstandigheid en samen zingen op niveau.",
+        "We werken aan muzikaliteit, expressie, solfege (notenleer), zelfstandigheid en samen zingen op niveau.",
       tone: "bg-indigo-100/80",
       offset: "lg:mt-20",
     },

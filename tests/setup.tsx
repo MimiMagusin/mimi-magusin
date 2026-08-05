@@ -33,6 +33,7 @@ vi.mock("next/image", () => ({
   default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
     const { src, alt, ...rest } = props;
     const resolvedSrc = typeof src === "string" ? src : "";
+    // eslint-disable-next-line @next/next/no-img-element -- this mock replaces next/image itself
     return <img src={resolvedSrc} alt={alt} {...rest} />;
   },
 }));
@@ -57,10 +58,13 @@ vi.mock("framer-motion", () => {
   const motionProxy = new Proxy(
     {},
     {
-      get: (_, tag: string) =>
-        React.forwardRef(({ children, ...props }: any, ref) =>
+      get: (_, tag: string) => {
+        const Component = React.forwardRef(({ children, ...props }: any, ref) =>
           React.createElement(tag, { ref, ...props }, children)
-        ),
+        );
+        Component.displayName = `motion.${tag}`;
+        return Component;
+      },
     }
   );
 

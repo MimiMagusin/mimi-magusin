@@ -47,6 +47,7 @@ export type Course = {
   imageSrc: string;
   imageAlt: string;
   targetAudience: string;
+  maxGroupSize?: number;
   href: string;
   price: string;
   pricing?: CoursePricing;
@@ -88,6 +89,7 @@ export const courses: Course[] = [
     imageSrc: "/sinterklaas-concert-2025.jpg",
     imageAlt: "Schubert concert in gelderlandfabriek",
     targetAudience: "Groep 2 t/m 4 (5 t/m 8 jaar)",
+    maxGroupSize: 10,
     href: "/courses/choir-academy-zangmakers",
     price: choirAcademySchoolYearPricing.summary.primary,
     pricing: choirAcademySchoolYearPricing,
@@ -137,6 +139,7 @@ export const courses: Course[] = [
     imageSrc: "/groepsfoto.jpg",
     imageAlt: "Concert Gelderlandfabriek 2023",
     targetAudience: "Groep 5 t/m 8 (8 t/m 12 jaar)",
+    maxGroupSize: 14,
     href: "/courses/choir-academy-zangcrew",
     price: choirAcademySchoolYearPricing.summary.primary,
     pricing: choirAcademySchoolYearPricing,

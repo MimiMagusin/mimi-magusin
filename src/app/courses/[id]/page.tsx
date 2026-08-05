@@ -184,6 +184,12 @@ export default async function CourseDetailPage({ params }: PageProps) {
                 <p>
                   <strong>Thema’s:</strong> {course.themes.join(", ")}
                 </p>
+                {course.maxGroupSize && (
+                  <p>
+                    <strong>Maximale groepsgrootte:</strong>{" "}
+                    {course.maxGroupSize} leerlingen
+                  </p>
+                )}
                 {sessions.length > 0 && (
                   <div className="mt-4">
                     <strong>Je kiest één lesmoment:</strong>

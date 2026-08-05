@@ -104,7 +104,7 @@ export default function ChoirAcademy() {
               </li>
               <li className="flex items-center gap-3">
                 <PencilSquareIcon className="h-5 w-5 text-gray-600" />
-                Inschrijven kan het hele jaar door. Altijd twee gratis
+                Inschrijven kan het hele jaar door. Altijd twee vrijblijvende
                 proeflessen!
               </li>
             </ul>

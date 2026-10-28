@@ -88,6 +88,3 @@ vi.mock("react-slick", () => ({
     <div data-testid="mock-slick">{children}</div>
   ),
 }));
-
-vi.mock("slick-carousel/slick/slick.css", () => ({}));
-vi.mock("slick-carousel/slick/slick-theme.css", () => ({}));

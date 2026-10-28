@@ -40,7 +40,8 @@
     "typescript": "5.9.3"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react": "^6.1.2",
